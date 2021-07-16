@@ -29,19 +29,31 @@ class _SelectRoleState extends State<SelectRole> {
                     height: MediaQuery.of(context).size.height * .4,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(36.0),
-                      color: Colors.red,
+                      gradient: RadialGradient(
+                        radius: 0.9,
+                        colors: [
+                          Color(0xff23FFFF).withOpacity(0.68),
+                          Color(0xff2D91A5).withOpacity(0.68),
+                        ],
+                      ),
                     ),
-                    child: Row(
+                    padding: EdgeInsets.all(20.0),
+                    child: Column(
                       children: [
-                        OutlinedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Login(),
-                              ),
-                            );
-                          },
-                          child: Text("Hi"),
+                        
+                        Row(
+                          children: [
+                            OutlinedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Login(),
+                                  ),
+                                );
+                              },
+                              child: Text("Hi"),
+                            ),
+                          ],
                         ),
                       ],
                     ),
