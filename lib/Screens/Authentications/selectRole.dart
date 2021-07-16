@@ -1,3 +1,4 @@
+import 'package:ehs_lms/Screens/Authentications/login.dart';
 import 'package:flutter/material.dart';
 
 class SelectRole extends StatefulWidget {
@@ -11,8 +12,19 @@ class _SelectRoleState extends State<SelectRole> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text("hy"),
+      body: Column(
+        children: [
+          OutlinedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Login(),
+                ),
+              );
+            },
+            child: Text("Hi"),
+          ),
+        ],
       ),
     );
   }

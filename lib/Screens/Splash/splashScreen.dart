@@ -1,6 +1,7 @@
+import 'dart:async';
+
 import 'package:ehs_lms/Screens/Authentications/selectRole.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -12,9 +13,13 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
-        () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => SelectRole())));
+      Duration(seconds: 3),
+      () => Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (BuildContext context) => SelectRole(),
+        ),
+      ),
+    );
   }
 
   @override
