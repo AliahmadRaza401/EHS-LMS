@@ -213,7 +213,7 @@ Widget emailBar(BuildContext context) {
       controller: email,
       validator: (query) {
         if (query!.isEmpty) {
-          return 'Search Some Advice!';
+          return 'Error';
         } else {
           return null;
         }
@@ -272,7 +272,7 @@ Widget passwordBar(BuildContext context) {
       controller: password,
       validator: (query) {
         if (query!.isEmpty) {
-          return 'Search Some Advice!';
+          return 'Error';
         } else {
           return null;
         }

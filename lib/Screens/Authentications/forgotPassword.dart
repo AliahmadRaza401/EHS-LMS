@@ -206,7 +206,7 @@ Widget emailBar(BuildContext context) {
       controller: email,
       validator: (query) {
         if (query!.isEmpty) {
-          return 'Search Some Advice!';
+          return 'Error';
         } else {
           return null;
         }

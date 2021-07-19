@@ -74,14 +74,14 @@ Widget centerContainer(BuildContext context) {
                       Row(
                         children: [
                           Flexible(
-                            child: passwordBar(context),
+                            child: passwordBar(context, password),
                           ),
                         ],
                       ),
                       Row(
                         children: [
                           Flexible(
-                            child: passwordBar(context),
+                            child: passwordBar(context, cPassword),
                           ),
                         ],
                       ),
@@ -136,7 +136,7 @@ Widget centerContainer(BuildContext context) {
 }
 
 //password widget
-Widget passwordBar(BuildContext context) {
+Widget passwordBar(BuildContext context, TextEditingController pass) {
   return Container(
     width: MediaQuery.of(context).size.width * 1,
     decoration: BoxDecoration(
@@ -146,10 +146,10 @@ Widget passwordBar(BuildContext context) {
     child: TextFormField(
       initialValue: null,
       autocorrect: true,
-      controller: password,
+      controller: pass,
       validator: (query) {
         if (query!.isEmpty) {
-          return 'Search Some Advice!';
+          return 'Error';
         } else {
           return null;
         }
