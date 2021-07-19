@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ehs_lms/Screens/Authentications/forgotPassword.dart';
 import 'package:ehs_lms/widgets/auth_bg.dart';
 import 'package:flutter/material.dart';
 
@@ -74,6 +75,23 @@ class _LoginState extends State<Login> {
                         Row(
                           children: [
                             Flexible(
+                              child: Padding(
+                                padding: EdgeInsets.only(bottom: 6.0),
+                                child: AutoSizeText(
+                                  "",
+                                  style: TextStyle(
+                                    color: Color(0xffC91818),
+                                    fontSize: 15.0,
+                                  ),
+                                  maxLines: 1,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Flexible(
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 1,
                                 height: 50.0,
@@ -106,11 +124,24 @@ class _LoginState extends State<Login> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              "Forgot Password",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15.0,
+                            Padding(
+                              padding: EdgeInsets.only(top: 10.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => ForgotPassword(),
+                                    ),
+                                  );
+                                },
+                                child: AutoSizeText(
+                                  "Forgot Password",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15.0,
+                                  ),
+                                  maxLines: 1,
+                                ),
                               ),
                             ),
                           ],
@@ -227,7 +258,7 @@ Widget emailBar(BuildContext context) {
   );
 }
 
-//email widget
+//password widget
 Widget passwordBar(BuildContext context) {
   return Container(
     width: MediaQuery.of(context).size.width * 1,
@@ -282,6 +313,7 @@ Widget passwordBar(BuildContext context) {
           color: Color(0xffaeaeae),
           width: 12.0,
           height: 12.0,
+          scale: 2,
         ),
       ),
     ),
