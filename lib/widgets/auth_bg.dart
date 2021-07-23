@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-Widget auth_bg(BuildContext context) {
+Widget authBg(BuildContext context) {
   return SingleChildScrollView(
     child: Container(
       width: MediaQuery.of(context).size.width * 1,

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Screens/Authentications/forgotPassword.dart';
+import 'package:ehs_lms/Screens/app_Screens/home.dart';
 import 'package:ehs_lms/widgets/auth_bg.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: Stack(
         children: [
-          auth_bg(context),
+          authBg(context),
           centerContainer(),
         ],
       ),
@@ -96,7 +97,13 @@ class _LoginState extends State<Login> {
                                 width: MediaQuery.of(context).size.width * 1,
                                 height: 50.0,
                                 child: OutlinedButton(
-                                  onPressed: null,
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => HomeScreen(),
+                                      ),
+                                    );
+                                  },
                                   child: AutoSizeText(
                                     "Sign In",
                                     style: TextStyle(

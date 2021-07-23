@@ -21,7 +21,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
     return Scaffold(
       body: Stack(
         children: [
-          auth_bg(context),
+          authBg(context),
           centerContainer(context),
         ],
       ),

@@ -19,7 +19,7 @@ class _PasswordChangeState extends State<PasswordChange> {
     return Scaffold(
       body: Stack(
         children: [
-          auth_bg(context),
+          authBg(context),
           centerContainer(context),
         ],
       ),
@@ -92,13 +92,7 @@ Widget centerContainer(BuildContext context) {
                               width: MediaQuery.of(context).size.width * 1,
                               height: 50.0,
                               child: OutlinedButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) => PasswordChange(),
-                                    ),
-                                  );
-                                },
+                                onPressed: null,
                                 child: AutoSizeText(
                                   "Confirm",
                                   style: TextStyle(

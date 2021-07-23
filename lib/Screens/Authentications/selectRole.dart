@@ -18,7 +18,7 @@ class _SelectRoleState extends State<SelectRole> {
     return Scaffold(
       body: Stack(
         children: [
-          auth_bg(context),
+          authBg(context),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

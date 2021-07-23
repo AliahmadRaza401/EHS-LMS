@@ -19,7 +19,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     return Scaffold(
       body: Stack(
         children: [
-          auth_bg(context),
+          authBg(context),
           centerContainer(context),
         ],
       ),
