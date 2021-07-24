@@ -35,11 +35,11 @@ Widget homeScreenContainer(
         Row(
           children: [
             Flexible(
-              child: AutoSizeText(
+              child: Text(
                 heading,
                 style: TextStyle(
                   color: Color(0xff14514D),
-                  fontSize: 20.0,
+                  fontSize: MediaQuery.of(context).size.width * .044,
                   fontWeight: FontWeight.w700,
                   fontFamily: "Segoe UI",
                 ),
