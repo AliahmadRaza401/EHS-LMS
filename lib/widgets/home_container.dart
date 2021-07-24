@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 Widget homeScreenContainer(
     BuildContext context, String image, heading, subHeading) {
   return Container(
-    width: 180.0,
-    height: 160.0,
+    width: MediaQuery.of(context).size.width * .4,
+    height: MediaQuery.of(context).size.height * .2,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(19.0),
       color: Color(0xffFFFFFF),
@@ -15,7 +15,7 @@ Widget homeScreenContainer(
           color: Colors.black54,
           spreadRadius: 2,
           blurRadius: 6,
-          offset: Offset(0, 3), // changes position of shadow
+          offset: Offset(0, 3),
         ),
       ],
     ),
@@ -28,8 +28,7 @@ Widget homeScreenContainer(
           children: [
             Image.asset(
               image,
-              width: 60.0,
-              height: 60.0,
+              height: MediaQuery.of(context).size.height * .08,
             ),
           ],
         ),
