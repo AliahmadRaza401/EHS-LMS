@@ -179,7 +179,7 @@ Widget homeBottomContainer(BuildContext context) {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * .92,
+                width: MediaQuery.of(context).size.width * .93,
                 height: MediaQuery.of(context).size.height * .24,
                 child: SingleChildScrollView(
                   child: Column(
