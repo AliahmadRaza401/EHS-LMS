@@ -1,5 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/widgets/auth_bg.dart';
+import 'package:ehs_lms/widgets/selectRoleBg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,60 +18,91 @@ class _SelectRoleState extends State<SelectRole> {
     return Scaffold(
       body: Stack(
         children: [
-          authBg(context),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * .86,
-                    height: MediaQuery.of(context).size.height * .34,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(36.0),
-                      gradient: RadialGradient(
-                        radius: 0.9,
-                        colors: [
-                          Color(0xff23FFFF).withOpacity(0.68),
-                          Color(0xff2D91A5).withOpacity(0.68),
+          selectRoleBg(context),
+          Padding(
+            padding: EdgeInsets.only(
+              top: MediaQuery.of(context).size.height * .4,
+              bottom: MediaQuery.of(context).size.height * .02,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * .86,
+                      height: MediaQuery.of(context).size.height * .34,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(36.0),
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 1.6,
+                        ),
+                        gradient: RadialGradient(
+                          radius: 0.86,
+                          colors: [
+                            Color(0xff23FFFF),
+                            Color(0xff6EB7C6),
+                          ],
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.4),
+                            spreadRadius: 2,
+                            blurRadius: 6,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        vertical: MediaQuery.of(context).size.height * .04,
+                        horizontal: MediaQuery.of(context).size.width * .12,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          loginPattern(
+                            context,
+                            "assets/images/student_auth_icon.png",
+                            "Student",
+                          ),
+                          Divider(
+                            color: Colors.white,
+                          ),
+                          loginPattern(
+                            context,
+                            "assets/images/teacher_auth_icon.png",
+                            "Teacher",
+                          ),
+                          Divider(
+                            color: Colors.white,
+                          ),
+                          loginPattern(
+                            context,
+                            "assets/images/parent_auth_icon.png",
+                            "Parents",
+                          ),
                         ],
                       ),
                     ),
-                    padding: EdgeInsets.symmetric(
-                      vertical: MediaQuery.of(context).size.height * .04,
-                      horizontal: MediaQuery.of(context).size.width * .14,
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AutoSizeText(
+                      "Version 1.0 @ Copyright",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.0,
+                      ),
+                      maxLines: 1,
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        loginPattern(
-                          context,
-                          "assets/images/student_auth_icon.png",
-                          "Student",
-                        ),
-                        Divider(
-                          color: Colors.white,
-                        ),
-                        loginPattern(
-                          context,
-                          "assets/images/teacher_auth_icon.png",
-                          "Teacher",
-                        ),
-                        Divider(
-                          color: Colors.white,
-                        ),
-                        loginPattern(
-                          context,
-                          "assets/images/parent_auth_icon.png",
-                          "Parents",
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

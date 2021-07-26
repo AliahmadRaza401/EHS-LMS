@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget authBg(BuildContext context) {
+Widget selectRoleBg(BuildContext context) {
   return SingleChildScrollView(
     child: Container(
       width: MediaQuery.of(context).size.width * 1,
@@ -28,7 +28,7 @@ Widget authBg(BuildContext context) {
               children: [
                 Image.asset(
                   'assets/images/logo.png',
-                  height: MediaQuery.of(context).size.height * .22,
+                  height: MediaQuery.of(context).size.height * .26,
                 ),
               ],
             ),

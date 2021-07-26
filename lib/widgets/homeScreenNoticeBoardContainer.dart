@@ -8,7 +8,7 @@ Widget bottomCard(BuildContext context, String titleImage, heading, subheading,
     children: [
       Padding(
         padding: EdgeInsets.symmetric(
-          vertical: 8.0,
+          vertical: 4.0,
         ),
         child: Row(
           children: [
@@ -17,7 +17,7 @@ Widget bottomCard(BuildContext context, String titleImage, heading, subheading,
                 Image.asset(
                   titleImage,
                   color: Colors.white,
-                  height: MediaQuery.of(context).size.height * .038,
+                  height: MediaQuery.of(context).size.height * .03,
                 ),
               ],
             ),
@@ -60,7 +60,7 @@ Widget bottomCard(BuildContext context, String titleImage, heading, subheading,
             children: [
               Container(
                 width: MediaQuery.of(context).size.width * .9,
-                height: MediaQuery.of(context).size.height * .12,
+                height: MediaQuery.of(context).size.height * .11,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(100.0),
@@ -75,7 +75,7 @@ Widget bottomCard(BuildContext context, String titleImage, heading, subheading,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * .12,
+                          height: MediaQuery.of(context).size.height * .11,
                           child: Image.asset(
                             cardImage,
                           ),
@@ -173,6 +173,14 @@ Widget bottomCard(BuildContext context, String titleImage, heading, subheading,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100.0),
                     color: Color(0xff6EB7C6),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black54,
+                        spreadRadius: -2,
+                        blurRadius: 6,
+                        // offset: Offset(0, 3),
+                      ),
+                    ],
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

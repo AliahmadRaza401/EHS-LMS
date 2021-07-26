@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Screens/Authentications/passwordChange.dart';
-import 'package:ehs_lms/widgets/auth_bg.dart';
+import 'package:ehs_lms/widgets/selectRoleBg.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
@@ -21,7 +21,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
     return Scaffold(
       body: Stack(
         children: [
-          authBg(context),
+          selectRoleBg(context),
           centerContainer(context),
         ],
       ),

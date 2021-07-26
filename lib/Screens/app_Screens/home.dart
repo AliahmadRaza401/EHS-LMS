@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/Screens/Authentications/homeScreenNoticeBoardContainer.dart';
+import 'package:ehs_lms/widgets/bottomnavigation.dart';
+import 'package:ehs_lms/widgets/homeScreenNoticeBoardContainer.dart';
 import 'package:ehs_lms/widgets/homeScreenWidgets.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +19,13 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           homeBg(context),
           homeArea(context),
+          Positioned(
+            bottom: 0.0,
+            child: bottomNavigation(context),
+          ),
         ],
       ),
+      // bottomNavigationBar: bottomNavigation(context),
     );
   }
 }
@@ -60,7 +66,12 @@ Widget homeArea(BuildContext context) {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            homeBottomContainer(context),
+            Padding(
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).size.height * .06,
+              ),
+              child: homeBottomContainer(context),
+            ),
           ],
         ),
       ],
@@ -180,7 +191,7 @@ Widget homeBottomContainer(BuildContext context) {
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width * .93,
-                height: MediaQuery.of(context).size.height * .24,
+                height: MediaQuery.of(context).size.height * .25,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [

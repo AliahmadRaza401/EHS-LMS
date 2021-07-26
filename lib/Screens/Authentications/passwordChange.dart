@@ -1,5 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/widgets/auth_bg.dart';
+import 'package:ehs_lms/widgets/selectRoleBg.dart';
 import 'package:flutter/material.dart';
 
 final _formKey = GlobalKey<FormState>();
@@ -19,7 +19,7 @@ class _PasswordChangeState extends State<PasswordChange> {
     return Scaffold(
       body: Stack(
         children: [
-          authBg(context),
+          selectRoleBg(context),
           centerContainer(context),
         ],
       ),
