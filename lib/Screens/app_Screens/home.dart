@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/widgets/bottomnavigation.dart';
 import 'package:ehs_lms/widgets/homeScreenNoticeBoardContainer.dart';
 import 'package:ehs_lms/widgets/homeScreenWidgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool barSize = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +28,299 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       // bottomNavigationBar: bottomNavigation(context),
+    );
+  }
+
+  Widget bottomNavigation(BuildContext context) {
+    return ClipPath(
+      clipper: OvalTopBorderClipper(),
+      child: Container(
+        height: barSize == false
+            ? MediaQuery.of(context).size.height * .09
+            : MediaQuery.of(context).size.height * .18,
+        width: MediaQuery.of(context).size.width * 1,
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment(0.0, -0.9),
+            radius: 4,
+            colors: [
+              Color(0xff23FFFF),
+              Color(0xff27555E),
+            ],
+            stops: <double>[0.0, 0.9],
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    // barSize = true;
+                    setState(() {
+                      barSize = !barSize;
+                    });
+                  },
+                  child: Image.asset(
+                    "assets/images/nav_button.png",
+                    color: Colors.white,
+                    width: MediaQuery.of(context).size.width * .22,
+                  ),
+                ),
+              ],
+            ),
+            barSize == false
+                ? Row(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * .072,
+                        width: MediaQuery.of(context).size.width * 1,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
+                : Row(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * .14,
+                        width: MediaQuery.of(context).size.width * 1,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .04,
+                              ),
+                              child: Image.asset(
+                                "assets/images/lms.png",
+                                color: Colors.white,
+                                scale: 3.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+          ],
+        ),
+      ),
     );
   }
 }
