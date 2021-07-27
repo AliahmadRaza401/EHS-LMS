@@ -6,7 +6,7 @@ Widget bottomNavigation(BuildContext context) {
   return ClipPath(
     clipper: OvalTopBorderClipper(),
     child: Container(
-      height: MediaQuery.of(context).size.height * .1,
+      height: MediaQuery.of(context).size.height * .09,
       width: MediaQuery.of(context).size.width * 1,
       decoration: BoxDecoration(
         gradient: RadialGradient(
@@ -28,14 +28,14 @@ Widget bottomNavigation(BuildContext context) {
               Image.asset(
                 "assets/images/nav_button.png",
                 color: Colors.white,
-                width: MediaQuery.of(context).size.width * .24,
+                width: MediaQuery.of(context).size.width * .22,
               ),
             ],
           ),
           Row(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * .08,
+                height: MediaQuery.of(context).size.height * .072,
                 width: MediaQuery.of(context).size.width * 1,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -47,7 +47,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -57,7 +57,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -67,7 +67,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -77,7 +77,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -87,7 +87,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -97,7 +97,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -107,7 +107,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -117,7 +117,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -127,7 +127,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                     Padding(
@@ -137,7 +137,7 @@ Widget bottomNavigation(BuildContext context) {
                       child: Image.asset(
                         "assets/images/lms.png",
                         color: Colors.white,
-                        scale: 2.4,
+                        scale: 3.0,
                       ),
                     ),
                   ],

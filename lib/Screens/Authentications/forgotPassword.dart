@@ -203,14 +203,15 @@ Widget centerContainer(BuildContext context) {
                                 ),
                                 style: OutlinedButton.styleFrom(
                                   side: BorderSide(
-                                    color: Color(0xff1EB2A6),
+                                    color: Color(0xff707070),
                                   ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
-                                      Radius.circular(9.0),
+                                      Radius.circular(50.0),
                                     ),
                                   ),
-                                  backgroundColor: Color(0xff1EB2A6),
+                                  backgroundColor:
+                                      Color(0xff14514D).withOpacity(.55),
                                 ),
                               ),
                             ),

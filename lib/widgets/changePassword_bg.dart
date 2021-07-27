@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget loginBg(BuildContext context) {
+Widget changePasswordBg(BuildContext context) {
   return SingleChildScrollView(
     child: Stack(
       children: [
@@ -35,7 +35,7 @@ Widget loginBg(BuildContext context) {
           ),
         ),
         Image.asset(
-          "assets/images/signin_bg.png",
+          "assets/images/passwordChange_bg.png",
           width: MediaQuery.of(context).size.width * 1,
           height: MediaQuery.of(context).size.height * 1,
           fit: BoxFit.fill,

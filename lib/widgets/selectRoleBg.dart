@@ -28,7 +28,7 @@ Widget selectRoleBg(BuildContext context) {
               children: [
                 Image.asset(
                   'assets/images/logo.png',
-                  height: MediaQuery.of(context).size.height * .26,
+                  height: MediaQuery.of(context).size.height * .24,
                 ),
               ],
             ),

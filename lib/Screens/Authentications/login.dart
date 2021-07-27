@@ -151,7 +151,8 @@ class _LoginState extends State<Login> {
                                         Radius.circular(50.0),
                                       ),
                                     ),
-                                    backgroundColor: Color(0xff14514D).withOpacity(.55),
+                                    backgroundColor:
+                                        Color(0xff14514D).withOpacity(.55),
                                   ),
                                 ),
                               ),
