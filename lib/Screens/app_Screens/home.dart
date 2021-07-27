@@ -287,7 +287,7 @@ Widget homeBg(BuildContext context) {
       ),
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).size.height * .12,
-        bottom: MediaQuery.of(context).size.height * .31,
+        bottom: MediaQuery.of(context).size.height * .37,
       ),
       child: widgetArea(context),
     ),

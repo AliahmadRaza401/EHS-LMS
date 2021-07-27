@@ -6,7 +6,7 @@ Widget homeScreenContainer(
     BuildContext context, String image, heading, subHeading) {
   return Container(
     width: MediaQuery.of(context).size.width * .4,
-    height: MediaQuery.of(context).size.height * .2,
+    height: MediaQuery.of(context).size.height * .19,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(19.0),
       color: Color(0xffFFFFFF),
@@ -28,7 +28,7 @@ Widget homeScreenContainer(
           children: [
             Image.asset(
               image,
-              height: MediaQuery.of(context).size.height * .08,
+              height: MediaQuery.of(context).size.height * .06,
             ),
           ],
         ),
