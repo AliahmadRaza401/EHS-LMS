@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Screens/Authentications/selectRole.dart';
 import 'package:flutter/material.dart';
 
@@ -27,21 +28,34 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        width: MediaQuery.of(context).size.width * 1,
-        height: MediaQuery.of(context).size.height * 1,
-        decoration: BoxDecoration(
-          gradient: RadialGradient(
-            radius: 0.9,
-            colors: [
-              Color(0xffffffff),
-              Color(0xff6EB7C6),
-            ],
+          width: MediaQuery.of(context).size.width * 1,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              radius: 0.9,
+              colors: [
+                Color(0xffffffff),
+                Color(0xff6EB7C6),
+              ],
+            ),
           ),
-        ),
-        child: Center(
-          child: Image.asset('assets/images/logo.png'),
-        ),
-      ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/logo.png',
+                height: MediaQuery.of(context).size.height * .4,
+              ),
+              AutoSizeText(
+                "Learning Management System",
+                style: TextStyle(
+                  color: Color(0xff14514D),
+                  fontSize: 15.0,
+                ),
+                maxLines: 1,
+              ),
+            ],
+          )),
     );
   }
 }
