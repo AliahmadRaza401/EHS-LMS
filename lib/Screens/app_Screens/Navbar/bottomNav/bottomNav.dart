@@ -13,17 +13,30 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   double currentIndex = 0;
+  double upIndex = 0;
+  bool main = true;
 
-  final _widgetOptions = [
+  final mainWidget = [
     HomeScreen(),
-    Text('Index 2: Events'),
-    Text('Index 3: Profile'),
-    Text('Index 2: Events'),
+    Text('Index 1: Events'),
+    Text('Index 2: Profile'),
+    Text('Index 3: Events'),
+    Text('Index 4: Profile'),
+    Text('Index 5: Menu'),
+    Text('Index 6: Events'),
     Text('Index 3: Profile'),
     Text('Index 4: Menu'),
-    Text('Index 2: Events'),
-    Text('Index 3: Profile'),
-    Text('Index 4: Menu'),
+    Text('Dont remove this is the just use for fill length'),
+  ];
+  final upWidget = [
+    Container(
+        color: Colors.green,
+        width: 500,
+        height: 900,
+        child: Text('Index 1: upWidget ++++++++++++++++++++++++++++')),
+    Text('Index 2: upWidget'),
+    Text('Index 3: upWidget'),
+    Text('Index 4: upWidget'),
     Text('Dont remove this is the just use for fill length'),
   ];
 
@@ -98,17 +111,29 @@ class _BottomNavState extends State<BottomNav> {
               unselectedColor: Colors.white),
         ],
         onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
+          if (index >= 3.0 && index <= 3.9) {
+            setState(() {
+              upIndex = index;
+              main = false;
+            });
+            print("UpIndex : ${upIndex.toString().substring(2, 3)}");
+          } else {
+            setState(() {
+              currentIndex = index;
+              main = true;
+            });
+          }
         },
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Center(
-          child: _widgetOptions
-              .elementAt(int.parse(currentIndex.toString().substring(0, 1))),
+          child: main == true
+              ? mainWidget
+                  .elementAt(int.parse(currentIndex.toString().substring(0, 1)))
+              : upWidget
+                  .elementAt(int.parse(upIndex.toString().substring(2, 3))),
         ),
       ),
     );

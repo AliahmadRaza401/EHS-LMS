@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Screens/Authentications/forgotPassword.dart';
-import 'package:ehs_lms/Screens/app_Screens/bottomNav/bottomNav.dart';
+import 'package:ehs_lms/Screens/app_Screens/Navbar/bottomNav/bottomNav.dart';
 import 'package:ehs_lms/widgets/login_bg.dart';
 import 'package:flutter/material.dart';
 
