@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 Widget homeScreenContainer(
-    BuildContext context, String image, heading, subHeading) {
+    BuildContext context, String image, heading, subHeading, int color) {
   return GestureDetector(
     onTap: () {
       Navigator.of(context).push(
@@ -18,7 +18,7 @@ Widget homeScreenContainer(
       height: MediaQuery.of(context).size.height * .19,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(19.0),
-        color: Color(0xffFFFFFF),
+        color: Color(color),
         boxShadow: [
           BoxShadow(
             color: Colors.black54,

@@ -22,66 +22,77 @@ Widget widgetArea(BuildContext context) {
               "assets/images/lms.png",
               "LMS",
               "View Report Cards",
+              0xffC1EAFF,
             ),
             homeScreenContainer(
               context,
               "assets/images/social_learning.png",
               "Social Learning",
               "Social Discussions",
+              0xffFFEEEE,
             ),
             homeScreenContainer(
               context,
               "assets/images/report_card.png",
               "Report Cards",
               "View Report Cards",
+              0xffF4F5D2,
             ),
             homeScreenContainer(
               context,
               "assets/images/attendance.png",
               "Attendance",
               "View Attendance",
+              0xffE2FFDF,
             ),
             homeScreenContainer(
               context,
               "assets/images/health_records.png",
               "Health Records",
               "View History",
+              0xffC1EAFF,
             ),
             homeScreenContainer(
               context,
               "assets/images/module.png",
               "Modules",
               "Core Modules",
+              0xffFFEEEE,
             ),
             homeScreenContainer(
               context,
               "assets/images/calendar.png",
               "Calendar",
               "View Events\nView Class Schedules",
+              0xffF4F5D2,
             ),
             homeScreenContainer(
               context,
               "assets/images/notice_board.png",
               "Notice Board",
               "View Notices",
+              0xffE2FFDF,
             ),
             homeScreenContainer(
               context,
               "assets/images/activities.png",
               "Activities",
               "Activities",
+              0xffFFF0E2,
             ),
             homeScreenContainer(
               context,
               "assets/images/learning_module.png",
               "Learning Module",
               "Learning Management System",
+              0xffffffff,
             ),
             homeScreenContainer(
               context,
               "assets/images/add.png",
               "Add",
               "",
+              0xffffffff,
             ),
           ],
         ),
@@ -112,7 +123,7 @@ currentDate() {
     '$currentDay' + " " + months[currentMon - 1],
     style: TextStyle(
       color: Colors.white,
-      fontSize: 16.0,
+      fontSize: 14.0,
       fontWeight: FontWeight.w700,
       fontFamily: "Segoe UI",
     ),
@@ -146,21 +157,47 @@ class HeaderCustomPaint extends CustomPainter {
     path_0.close();
 
     Paint paint0Fill = Paint()..style = PaintingStyle.fill;
-    paint0Fill.shader = ui.Gradient.linear(
+    paint0Fill.shader = ui.Gradient.radial(
       Offset(
-        size.width * 1,
-        size.height * 0.3,
+        size.width * 0.12,
+        size.height * 0.56,
       ),
-      Offset(
-        size.width * 1,
-        size.height * 1.2,
-      ),
+      size.width * 0.3,
       [
-        Color(0xff003c48).withOpacity(1),
-        Color(0xff1ef9f9).withOpacity(1),
+        Color(0xffffffff).withOpacity(1),
+        Color(0xff6eb7c6).withOpacity(1),
       ],
       [0, 1],
     );
+
+    // paint0Fill.shader = ui.Gradient.radial(
+    //   Offset(
+    //     size.width * 1,
+    //     size.height * 0.3,
+    //   ),
+    //   0.2,
+    //   [
+    //     Color(0xffffffff).withOpacity(1),
+    //     Color(0xff6EB7C6).withOpacity(1),
+    //   ],
+    //   [0.0, 0.9],
+    //   // Offset(
+    //   //   // 9, 1
+    //   //   size.width * 1,
+    //   //   size.height * 0.3,
+    //   // ),
+    //   // // 2.0,
+    //   // Offset(
+    //   //   size.width * 1,
+    //   //   size.height * 1.2,
+    //   // ),
+    //   //
+    //   // [
+    //   //   Color(0xff6EB7C6).withOpacity(1),
+    //   //   Color(0xffffffff).withOpacity(1),
+    //   // ],
+    //   // [0, 1],
+    // );
     canvas.drawPath(path_0, paint0Fill);
   }
 
@@ -212,8 +249,8 @@ class BottomContainerCustomPaint extends CustomPainter {
         size.height * 1,
       ),
       [
-        Color(0xff23ffff).withOpacity(1),
-        Color(0xff003c48).withOpacity(1),
+        Color(0xff8CD9E9).withOpacity(1),
+        Color(0xff558D98).withOpacity(1),
       ],
       [0, 1],
     );
