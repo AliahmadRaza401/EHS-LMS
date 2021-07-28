@@ -59,7 +59,7 @@ class _LoginState extends State<Login> {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width * .82,
-                    height: MediaQuery.of(context).size.height * .44,
+                    height: MediaQuery.of(context).size.height * .4,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(36.0),
                       gradient: RadialGradient(
@@ -84,11 +84,23 @@ class _LoginState extends State<Login> {
                     ),
                     padding: EdgeInsets.symmetric(
                       vertical: MediaQuery.of(context).size.height * .03,
-                      horizontal: MediaQuery.of(context).size.width * .1,
+                      horizontal: MediaQuery.of(context).size.width * .08,
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Log In",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22.0,
+                              ),
+                            ),
+                          ],
+                        ),
                         Row(
                           children: [
                             Flexible(
@@ -184,46 +196,6 @@ class _LoginState extends State<Login> {
                             ),
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Or",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15.0,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Register with",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 20.0,
-                            ),
-                            Column(
-                              children: [
-                                Image.asset(
-                                  "assets/images/google_auth_icon.png",
-                                  width: 32.0,
-                                  height: 32.0,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
                       ],
                     ),
                   ),
@@ -232,7 +204,7 @@ class _LoginState extends State<Login> {
             ),
             Padding(
               padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * .19,
+                top: MediaQuery.of(context).size.height * .24,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

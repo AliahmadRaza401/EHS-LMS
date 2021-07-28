@@ -51,26 +51,7 @@ Widget centerContainer(BuildContext context) {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * .04,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AutoSizeText(
-                  "Forgot Password",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLines: 1,
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * .06,
+              top: MediaQuery.of(context).size.height * .08,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -102,11 +83,24 @@ Widget centerContainer(BuildContext context) {
                   ),
                   padding: EdgeInsets.symmetric(
                     vertical: MediaQuery.of(context).size.height * .03,
-                    horizontal: MediaQuery.of(context).size.width * .12,
+                    horizontal: MediaQuery.of(context).size.width * .08,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AutoSizeText(
+                            "Forgot Password",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
+                            maxLines: 1,
+                          ),
+                        ],
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -226,7 +220,7 @@ Widget centerContainer(BuildContext context) {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * .18,
+              top: MediaQuery.of(context).size.height * .24,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

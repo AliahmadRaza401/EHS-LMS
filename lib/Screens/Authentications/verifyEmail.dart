@@ -34,7 +34,6 @@ Widget centerContainer(BuildContext context) {
     child: Form(
       key: _formKey,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
             padding: EdgeInsets.only(
@@ -53,33 +52,14 @@ Widget centerContainer(BuildContext context) {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * .04,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AutoSizeText(
-                  "Verify your Email",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLines: 1,
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * .06,
+              top: MediaQuery.of(context).size.height * .08,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width * .84,
-                  height: MediaQuery.of(context).size.height * .36,
+                  height: MediaQuery.of(context).size.height * .4,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(36.0),
                     gradient: RadialGradient(
@@ -104,10 +84,24 @@ Widget centerContainer(BuildContext context) {
                   ),
                   padding: EdgeInsets.symmetric(
                     vertical: MediaQuery.of(context).size.height * .03,
-                    horizontal: MediaQuery.of(context).size.width * .12,
+                    horizontal: MediaQuery.of(context).size.width * .08,
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AutoSizeText(
+                            "Verify your Email",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
+                            maxLines: 1,
+                          ),
+                        ],
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -133,7 +127,7 @@ Widget centerContainer(BuildContext context) {
                       Row(
                         children: [
                           Flexible(
-                            child: pinCode(),
+                            child: pinCode(context),
                           ),
                         ],
                       ),
@@ -183,11 +177,16 @@ Widget centerContainer(BuildContext context) {
                             padding: EdgeInsets.only(
                               top: 8.0,
                             ),
-                            child: Text(
-                              "Resend Code",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 13.0,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pop(context);
+                              },
+                              child: Text(
+                                "Resend Code",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14.0,
+                                ),
                               ),
                             ),
                           ),
@@ -201,7 +200,7 @@ Widget centerContainer(BuildContext context) {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * .18,
+              top: MediaQuery.of(context).size.height * .2,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -223,7 +222,7 @@ Widget centerContainer(BuildContext context) {
   );
 }
 
-Widget pinCode() {
+Widget pinCode(BuildContext context) {
   final BoxDecoration pinDecoration = BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.circular(9.0),
@@ -231,8 +230,8 @@ Widget pinCode() {
 
   return Padding(
     padding: EdgeInsets.symmetric(
-      vertical: 10.0,
-      horizontal: 20.0,
+      vertical: MediaQuery.of(context).size.height * .02,
+      horizontal: MediaQuery.of(context).size.width * .08,
     ),
     child: PinPut(
       fieldsCount: 4,
@@ -241,8 +240,8 @@ Widget pinCode() {
         fontSize: 25.0,
         color: Color(0xffaeaeae),
       ),
-      eachFieldWidth: 40.0,
-      eachFieldHeight: 55.0,
+      eachFieldWidth: MediaQuery.of(context).size.width * .1,
+      eachFieldHeight: MediaQuery.of(context).size.height * .08,
       // onSubmit: (String pin) => _showSnackBar(pin),
       focusNode: pinFocusNode,
       controller: pinController,
