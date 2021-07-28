@@ -1,4 +1,5 @@
 import 'package:ehs_lms/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
+import 'package:ehs_lms/widgets/header.dart';
 import 'package:flutter/material.dart';
 
 class Dummy extends StatefulWidget {
@@ -17,13 +18,7 @@ class _DummyState extends State<Dummy> {
         children: [
           Row(
             children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 1,
-                height: MediaQuery.of(context).size.height * .2,
-                child: ColoredBox(
-                  color: Colors.amber,
-                ),
-              ),
+              Header(context),
             ],
           ),
           Row(

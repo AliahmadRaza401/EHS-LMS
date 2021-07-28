@@ -12,9 +12,14 @@ class _SideNavSmallState extends State<SideNavSmall> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.yellow,
-      height: double.infinity,
-      width: MediaQuery.of(context).size.width * 0.2,
-      child: Text("hy"),
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          Text("hy"),
+          Text("hy"),
+         
+        ],
+      ),
     );
   }
 }
