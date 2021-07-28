@@ -1,4 +1,6 @@
+import 'package:ehs_lms/Screens/app_Screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation_action_bar/navigation_action_bar.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -8,8 +10,60 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
+  double currentIndex = 0;
+
+  final _widgetOptions = [
+    HomeScreen(),
+    Text('Index 2: Events'),
+    Text('Index 3: Profile'),
+    Text('Index 4: Menu'),
+    Text('Index 2: Events'),
+    Text('Index 3: Profile'),
+    Text('Index 4: Menu'),
+    Text('Index 2: Events'),
+    Text('Index 3: Profile'),
+    Text('Index 4: Menu'),
+    Text('Dont remove this is the just use for fill length'),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      bottomNavigationBar: NavigationActionBar(
+        context: context,
+        scaffoldColor: Colors.blueAccent,
+        index: 0,
+        subItems: [
+          NavBarItem(iconData: Icons.attach_file, size: 25),
+          NavBarItem(iconData: Icons.photo, size: 25),
+          NavBarItem(iconData: Icons.camera_alt, size: 25),
+          NavBarItem(iconData: Icons.attach_file, size: 25),
+        ],
+        mainIndex: 3,
+        items: [
+          NavBarItem(iconData: Icons.person, size: 30),
+          NavBarItem(iconData: Icons.list, size: 30),
+          NavBarItem(iconData: Icons.compare_arrows, size: 30),
+          NavBarItem(iconData: Icons.arrow_upward_outlined, size: 40),
+          NavBarItem(iconData: Icons.call_merge, size: 30),
+          NavBarItem(iconData: Icons.person, size: 30),
+          NavBarItem(iconData: Icons.person, size: 30),
+        ],
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+      ),
+      body: Container(
+        color: Colors.blueAccent,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Center(
+          child: _widgetOptions
+              .elementAt(int.parse(currentIndex.toString().substring(0, 1))),
+        ),
+      ),
+    );
   }
 }
