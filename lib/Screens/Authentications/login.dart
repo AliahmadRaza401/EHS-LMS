@@ -142,8 +142,7 @@ class _LoginState extends State<Login> {
                                   onPressed: () {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                            BottomNav(),
+                                        builder: (context) => BottomNav(),
                                       ),
                                     );
                                   },
