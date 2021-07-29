@@ -32,6 +32,8 @@ class _BottomNavState extends State<BottomNav> {
     Text('Index 10: Menu'),
   ];
 
+
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -133,11 +135,14 @@ class _BottomNavState extends State<BottomNav> {
                                       onTap: () {
                                         setState(() {
                                           iconIndex = 0;
+                                          activeColor = !activeColor;
                                         });
                                       },
                                       child: Image.asset(
                                         "assets/navIcons/home_icon.png",
-                                        color: Color(0xff23FFFF),
+                                        color: activeColor == true
+                                            ? Color(0xff23FFFF)
+                                            : Colors.white,
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 .06,
@@ -155,7 +160,9 @@ class _BottomNavState extends State<BottomNav> {
                                       },
                                       child: Image.asset(
                                         "assets/images/social_learning.png",
-                                        color: Colors.white,
+                                        color: activeColor == true
+                                            ? Color(0xff23FFFF)
+                                            : Colors.white,
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 .06,
