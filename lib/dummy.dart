@@ -21,30 +21,57 @@ class _DummyState extends State<Dummy> {
               Header(context),
             ],
           ),
-          Row(
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .14,
-                height: MediaQuery.of(context).size.height * .8,
-                child: SideNavSmall(),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .86,
-                height: MediaQuery.of(context).size.height * .8,
-                child: ColoredBox(
-                  color: Colors.blue,
-                  // child: Column(
-                  //   children: [],
-                  // ),
+          body(),
+        ],
+      ),
+    );
+  }
+
+  Widget body() {
+    return Container(
+      color: Colors.white,
+      width: MediaQuery.of(context).size.width * .95,
+      padding: EdgeInsets.symmetric(vertical: 50),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+              color: Colors.amber,
+              boxShadow: [
+                BoxShadow(color: Colors.green, spreadRadius: 3),
+              ],
+            ),
+            child: Row(
+              children: [
+                Column(
+                  children: [Text("Home")],
                 ),
-              ),
-            ],
-          ),
-          Row(
-            children: [],
+              ],
+            ),
           ),
         ],
       ),
+      //  Row(
+      //   children: [
+      //     SizedBox(
+      //       width: MediaQuery.of(context).size.width * .16,
+      //       height: MediaQuery.of(context).size.height * .8,
+      //       child: SideNavSmall(),
+      //     ),
+      //     SizedBox(
+      //       width: MediaQuery.of(context).size.width * .74,
+      //       height: MediaQuery.of(context).size.height * .8,
+      //       child: ColoredBox(
+      //         color: Colors.blue,
+      //         // child: Column(
+      //         //   children: [],
+      //         // ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
