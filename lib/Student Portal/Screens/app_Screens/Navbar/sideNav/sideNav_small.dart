@@ -11,7 +11,12 @@ class _SideNavSmallState extends State<SideNavSmall> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff5EC6C0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(30),
+        ),
+        color: Color(0xff5EC6C0),
+      ),
       child: ListView(
         scrollDirection: Axis.vertical,
         children: [

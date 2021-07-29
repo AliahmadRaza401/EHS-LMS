@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/widgets/homeScreenNoticeBoardContainer.dart';
-import 'package:ehs_lms/widgets/homeScreenWidgets.dart';
+import 'package:ehs_lms/Student%20Portal/widgets/home/homeScreenNoticeBoardContainer.dart';
+import 'package:ehs_lms/Student%20Portal/widgets/home/homeScreenWidgets.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

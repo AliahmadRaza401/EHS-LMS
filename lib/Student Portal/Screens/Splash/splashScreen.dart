@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/Screens/Authentications/selectRole.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/Authentications/selectRole.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

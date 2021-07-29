@@ -1,5 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/widgets/selectRoleBg.dart';
+import 'package:ehs_lms/Student%20Portal/widgets/selectRoleBg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
