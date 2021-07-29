@@ -1,10 +1,11 @@
-import 'dart:math';
 import 'dart:ui' as ui;
 
 import 'package:ehs_lms/dummy.dart';
 import 'package:flutter/material.dart';
 
 import '../../home.dart';
+
+bool viewVisible = false;
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -24,6 +25,11 @@ class _BottomNavState extends State<BottomNav> {
     Text('Index 3: Events'),
     Text('Index 4: Profile'),
     Text('Index 5: Menu'),
+    Text('Index 6: Menu'),
+    Text('Index 7: Menu'),
+    Text('Index 8: Menu'),
+    Text('Index 9: Menu'),
+    Text('Index 10: Menu'),
   ];
 
   @override
@@ -35,13 +41,56 @@ class _BottomNavState extends State<BottomNav> {
           body: Center(child: mainWidget.elementAt(iconIndex)),
         ),
         Positioned(
+          left: MediaQuery.of(context).size.width * .02,
+          bottom: MediaQuery.of(context).size.height * .12,
+          child: Visibility(
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            visible: viewVisible,
+            child: Container(
+              width: MediaQuery.of(context).size.width * .96,
+              height: MediaQuery.of(context).size.height * .08,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      upBarContainer(context, 6, "assets/images/calendar.png")
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      upBarContainer(context, 7, "assets/images/calendar.png")
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      upBarContainer(context, 8, "assets/images/calendar.png")
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      upBarContainer(context, 9, "assets/images/calendar.png")
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      upBarContainer(context, 10, "assets/images/calendar.png")
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        Positioned(
           bottom: 0.0,
           child: SizedBox(
             width: MediaQuery.of(context).size.width * 1,
             height: MediaQuery.of(context).size.height * .108,
             child: Scaffold(
               backgroundColor: Colors.transparent,
-              // body: mainWidget.elementAt(iconIndex),
               bottomNavigationBar: nav(context),
             ),
           ),
@@ -218,45 +267,88 @@ class _BottomNavState extends State<BottomNav> {
           Positioned(
             left: MediaQuery.of(context).size.width * .437,
             bottom: MediaQuery.of(context).size.height * .03,
-            child: Container(
-              width: MediaQuery.of(context).size.width * .13,
-              height: MediaQuery.of(context).size.width * .13,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50.0),
-                // color: Colors.red,
-                gradient: RadialGradient(
-                  radius: .8,
-                  colors: [
-                    Color(0xff6EB7C6),
-                    Color(0xff558D98),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  viewVisible = !viewVisible;
+                });
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width * .13,
+                height: MediaQuery.of(context).size.width * .13,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50.0),
+                  // color: Colors.red,
+                  gradient: RadialGradient(
+                    radius: .8,
+                    colors: [
+                      Color(0xff6EB7C6),
+                      Color(0xff558D98),
+                    ],
+                  ),
+                  border: Border.all(
+                    color: Color(0xff23FFFF).withOpacity(.37),
+                    width: 1,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(.4),
+                      spreadRadius: 2,
+                      blurRadius: 6,
+                      offset: Offset(0, 3),
+                    ),
                   ],
                 ),
-                border: Border.all(
-                  color: Color(0xff23FFFF).withOpacity(.37),
-                  width: 1,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(.4),
-                    spreadRadius: 2,
-                    blurRadius: 6,
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Transform.rotate(
-                  angle: 180 * pi / -360,
-                  child: Icon(
-                    Icons.double_arrow_rounded,
-                    color: Colors.white,
-                    size: MediaQuery.of(context).size.width * .08,
-                  ),
+                child: Image.asset(
+                  "assets/navIcons/up_icon.png",
+                  scale: 1.8,
                 ),
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget upBarContainer(BuildContext context, int index, String icon) {
+    return Container(
+      width: MediaQuery.of(context).size.width * .12,
+      height: MediaQuery.of(context).size.width * .12,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50.0),
+        // color: Colors.red,
+        gradient: RadialGradient(
+          radius: .8,
+          colors: [
+            Color(0xff6EB7C6),
+            Color(0xff558D98),
+          ],
+        ),
+        border: Border.all(
+          color: Color(0xff23FFFF).withOpacity(.37),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(.4),
+            spreadRadius: 2,
+            blurRadius: 6,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            iconIndex = index;
+          });
+        },
+        child: Image.asset(
+          icon,
+          color: Colors.white,
+          scale: 2.2,
+        ),
       ),
     );
   }
@@ -294,13 +386,13 @@ class NavPainter extends CustomPainter {
       size.width * 0.4335380,
       size.height * 0.29,
       size.width * 0.4482915,
-      size.height * 0.76,
+      size.height * 0.72,
       size.width * 0.5023666,
-      size.height * 0.76,
+      size.height * 0.72,
     );
     path_0.cubicTo(
       size.width * 0.5558787,
-      size.height * 0.76,
+      size.height * 0.72,
       size.width * 0.5710878,
       size.height * 0.28,
       size.width * 0.5754356,
