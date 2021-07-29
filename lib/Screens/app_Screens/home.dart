@@ -25,248 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
       // bottomNavigationBar: bottomNavigation(context),
     );
   }
-
-// Widget bottomNavigation(BuildContext context) {
-//   return ClipPath(
-//     clipper: OvalTopBorderClipper(),
-//     child: Container(
-//       height: barSize == false
-//           ? MediaQuery.of(context).size.height * .09
-//           : MediaQuery.of(context).size.height * .16,
-//       width: MediaQuery.of(context).size.width * 1,
-//       decoration: BoxDecoration(
-//         gradient: RadialGradient(
-//           center: Alignment(0.0, -0.9),
-//           radius: 4,
-//           colors: [
-//             Color(0xff23FFFF),
-//             Color(0xff27555E),
-//           ],
-//           stops: <double>[0.0, 0.9],
-//         ),
-//       ),
-//       child: Column(
-//         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//         children: [
-//           Row(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               GestureDetector(
-//                 onTap: () {
-//                   // barSize = true;
-//                   setState(() {
-//                     barSize = !barSize;
-//                   });
-//                 },
-//                 child: Image.asset(
-//                   "assets/images/nav_button.png",
-//                   color: Colors.white,
-//                   width: MediaQuery.of(context).size.width * .22,
-//                 ),
-//               ),
-//             ],
-//           ),
-//           barSize == false
-//               ? Row(
-//                   children: [
-//                     SizedBox(
-//                       height: MediaQuery.of(context).size.height * .072,
-//                       width: MediaQuery.of(context).size.width * 1,
-//                       child: ListView(
-//                         scrollDirection: Axis.horizontal,
-//                         children: [
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                           Padding(
-//                             padding: EdgeInsets.symmetric(
-//                               horizontal:
-//                                   MediaQuery.of(context).size.width * .04,
-//                             ),
-//                             child: Image.asset(
-//                               "assets/images/lms.png",
-//                               color: Colors.white,
-//                               scale: 3.0,
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                     ),
-//                   ],
-//                 )
-//               : Row(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: [
-//                     SizedBox(
-//                       height: MediaQuery.of(context).size.height * .12,
-//                       width: MediaQuery.of(context).size.width * .9,
-//                       child: Wrap(
-//                         direction: Axis.horizontal,
-//                         runAlignment: WrapAlignment.start,
-//                         runSpacing: MediaQuery.of(context).size.height * .02,
-//                         spacing: MediaQuery.of(context).size.width * .06,
-//                         children: [
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                           Image.asset(
-//                             "assets/images/lms.png",
-//                             color: Colors.white,
-//                             scale: 2.6,
-//                           ),
-//                         ],
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//         ],
-//       ),
-//     ),
-//   );
-// }
 }
 
 Widget homeBg(BuildContext context) {
@@ -425,42 +183,57 @@ Widget homeBottomContainer(BuildContext context) {
                 width: MediaQuery.of(context).size.width * .91,
                 height: MediaQuery.of(context).size.height * .27,
                 child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      bottomCard(
-                        context,
-                        "assets/images/activities.png",
-                        "Activities",
-                        "Recent Activities",
-                        "assets/images/dp.png",
-                        "You updated login Credentials",
-                        "Credentials updated",
-                        "15 July",
-                        "",
-                      ),
-                      bottomCard(
-                        context,
-                        "assets/images/notice.png",
-                        "Notices",
-                        "Recent Notices",
-                        "assets/images/dp.png",
-                        "Learning Portal Demonstration Video",
-                        "",
-                        "22 July",
-                        "www.youtube.com/video",
-                      ),
-                      bottomCard(
-                        context,
-                        "assets/images/event.png",
-                        "Events",
-                        "Upcoming Events",
-                        "assets/images/dp.png",
-                        "Elite High School Karachi Expo",
-                        "",
-                        "18 July",
-                        "",
-                      ),
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).size.height * .16,
+                    ),
+                    child: Column(
+                      children: [
+                        bottomCard(
+                          context,
+                          "assets/images/activities.png",
+                          "Activities",
+                          "Recent Activities",
+                          "assets/images/dp.png",
+                          "You updated login Credentials",
+                          "Credentials updated",
+                          "15 July",
+                          "",
+                        ),
+                        bottomCard(
+                          context,
+                          "assets/images/notice.png",
+                          "Notices",
+                          "Recent Notices",
+                          "assets/images/dp.png",
+                          "Learning Portal Demonstration Video",
+                          "",
+                          "22 July",
+                          "www.youtube.com/video",
+                        ),
+                        bottomCard(
+                          context,
+                          "assets/images/event.png",
+                          "Events",
+                          "Upcoming Events",
+                          "assets/images/dp.png",
+                          "Elite High School Karachi Expo",
+                          "",
+                          "18 July",
+                          "",
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: MediaQuery.of(context).size.height * .04,
+                            horizontal: MediaQuery.of(context).size.width * .16,
+                          ),
+                          child: Divider(
+                            color: Colors.white,
+                            thickness: 2.0,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
