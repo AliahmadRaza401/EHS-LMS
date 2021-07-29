@@ -1,19 +1,21 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/Screens/Authentications/verifyEmail.dart';
-import 'package:ehs_lms/widgets/login_bg.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/Authentications/passwordChange.dart';
+import 'package:ehs_lms/Student%20Portal/widgets/login_bg.dart';
 import 'package:flutter/material.dart';
+import 'package:pinput/pin_put/pin_put.dart';
 
-final email = TextEditingController();
 final _formKey = GlobalKey<FormState>();
+final pinController = TextEditingController();
+final pinFocusNode = FocusNode();
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+class VerifyEmail extends StatefulWidget {
+  const VerifyEmail({Key? key}) : super(key: key);
 
   @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
+  _VerifyEmailState createState() => _VerifyEmailState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _VerifyEmailState extends State<VerifyEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,6 @@ Widget centerContainer(BuildContext context) {
     child: Form(
       key: _formKey,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.only(
@@ -57,8 +58,8 @@ Widget centerContainer(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * .82,
-                  height: MediaQuery.of(context).size.height * .36,
+                  width: MediaQuery.of(context).size.width * .84,
+                  height: MediaQuery.of(context).size.height * .4,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(36.0),
                     gradient: RadialGradient(
@@ -86,13 +87,13 @@ Widget centerContainer(BuildContext context) {
                     horizontal: MediaQuery.of(context).size.width * .08,
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AutoSizeText(
-                            "Forgot Password",
+                            "Verify your Email",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 18.0,
@@ -111,7 +112,7 @@ Widget centerContainer(BuildContext context) {
                                 bottom: 20.0,
                               ),
                               child: AutoSizeText(
-                                "Enter the email address associated with your account",
+                                "Please enter the 4 digit code sent to your email address",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.0,
@@ -126,24 +127,7 @@ Widget centerContainer(BuildContext context) {
                       Row(
                         children: [
                           Flexible(
-                            child: emailBar(context),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Flexible(
-                            child: Padding(
-                              padding: EdgeInsets.only(bottom: 10.0),
-                              child: AutoSizeText(
-                                "",
-                                style: TextStyle(
-                                  color: Color(0xffC91818),
-                                  fontSize: 15.0,
-                                ),
-                                maxLines: 1,
-                              ),
-                            ),
+                            child: pinCode(context),
                           ),
                         ],
                       ),
@@ -157,43 +141,17 @@ Widget centerContainer(BuildContext context) {
                                 onPressed: () {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
-                                      builder: (context) => VerifyEmail(),
+                                      builder: (context) => PasswordChange(),
                                     ),
                                   );
                                 },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        AutoSizeText(
-                                          "Send Code",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16.0,
-                                          ),
-                                          maxLines: 1,
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      width: 20.0,
-                                    ),
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "assets/images/send_code_icon.png",
-                                          color: Colors.white,
-                                          width: 24.0,
-                                          height: 24.0,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                child: AutoSizeText(
+                                  "Confirm",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16.0,
+                                  ),
+                                  maxLines: 1,
                                 ),
                                 style: OutlinedButton.styleFrom(
                                   side: BorderSide(
@@ -212,6 +170,28 @@ Widget centerContainer(BuildContext context) {
                           ),
                         ],
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 8.0,
+                            ),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pop(context);
+                              },
+                              child: Text(
+                                "Resend Code",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -220,7 +200,7 @@ Widget centerContainer(BuildContext context) {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * .24,
+              top: MediaQuery.of(context).size.height * .2,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -242,61 +222,33 @@ Widget centerContainer(BuildContext context) {
   );
 }
 
-//email widget
-Widget emailBar(BuildContext context) {
-  return Container(
-    width: MediaQuery.of(context).size.width * 1,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(9),
+Widget pinCode(BuildContext context) {
+  final BoxDecoration pinDecoration = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(9.0),
+  );
+
+  return Padding(
+    padding: EdgeInsets.symmetric(
+      vertical: MediaQuery.of(context).size.height * .02,
+      horizontal: MediaQuery.of(context).size.width * .08,
     ),
-    child: TextFormField(
-      initialValue: null,
-      autocorrect: true,
-      controller: email,
-      validator: (query) {
-        if (query!.isEmpty) {
-          return 'Error';
-        } else {
-          return null;
-        }
-      },
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      keyboardAppearance: Brightness.dark,
-      keyboardType: TextInputType.name,
-      style: TextStyle(
+    child: PinPut(
+      fieldsCount: 4,
+      withCursor: true,
+      textStyle: TextStyle(
+        fontSize: 25.0,
         color: Color(0xffaeaeae),
-        fontSize: 15.0,
-        decoration: TextDecoration.none,
       ),
-      textInputAction: TextInputAction.next,
-      cursorColor: Colors.white,
-      cursorWidth: 2.0,
-      cursorHeight: 26.0,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 20.0),
-        errorStyle: TextStyle(
-          fontSize: 15.0,
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white, width: 2.0),
-          borderRadius: BorderRadius.circular(9.0),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white, width: 2.0),
-          borderRadius: BorderRadius.circular(9.0),
-        ),
-        border: InputBorder.none,
-        hintText: 'Email',
-        hintStyle: TextStyle(
-          color: Color(0xffaeaeae),
-          fontSize: 15.0,
-        ),
-        suffixIcon: Icon(
-          Icons.mail_outline_rounded,
-          color: Color(0xffaeaeae),
-        ),
-      ),
+      eachFieldWidth: MediaQuery.of(context).size.width * .1,
+      eachFieldHeight: MediaQuery.of(context).size.height * .08,
+      // onSubmit: (String pin) => _showSnackBar(pin),
+      focusNode: pinFocusNode,
+      controller: pinController,
+      submittedFieldDecoration: pinDecoration,
+      selectedFieldDecoration: pinDecoration,
+      followingFieldDecoration: pinDecoration,
+      pinAnimationType: PinAnimationType.fade,
     ),
   );
 }

@@ -1,6 +1,6 @@
 import 'dart:ui' as ui;
 
-import 'package:ehs_lms/dummy.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/social_learning.dart';
 import 'package:flutter/material.dart';
 
 import '../../home.dart';
@@ -20,7 +20,7 @@ class _BottomNavState extends State<BottomNav> {
 
   final mainWidget = [
     HomeScreen(),
-    Dummy(),
+    SocialLearning(),
     Text('Index 2: Profile'),
     Text('Index 3: Events'),
     Text('Index 4: Profile'),

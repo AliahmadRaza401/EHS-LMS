@@ -1,5 +1,6 @@
-import 'package:ehs_lms/Screens/Splash/splashScreen.dart';
 import 'package:flutter/material.dart';
+
+import 'Student Portal/Screens/Splash/splashScreen.dart';
 
 void main() {
   runApp(MyApp());

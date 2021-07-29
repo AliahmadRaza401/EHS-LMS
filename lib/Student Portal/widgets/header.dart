@@ -1,23 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/widgets/homeScreenWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Widget Header(BuildContext context) {
+import 'home/homeScreenWidgets.dart';
+
+Widget header(BuildContext context) {
   return Container(
     width: MediaQuery.of(context).size.width * 1,
     height: MediaQuery.of(context).size.height * 0.14,
-    // decoration: BoxDecoration(
-    //   gradient: RadialGradient(
-    //     center: Alignment(-0.76, -0.1),
-    //     radius: 1.1,
-    //     colors: [
-    //       Color(0xffffffff),
-    //       Color(0xff6EB7C6),
-    //     ],
-    //     stops: <double>[0.0, 1.0],
-    //   ),
-    // ),
     child: Padding(
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).size.height * .036,

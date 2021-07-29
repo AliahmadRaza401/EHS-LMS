@@ -1,8 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ehs_lms/Screens/Authentications/forgotPassword.dart';
-import 'package:ehs_lms/Screens/app_Screens/Navbar/bottomNav/bottomNav.dart';
-import 'package:ehs_lms/widgets/login_bg.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/bottomNav/bottomNav.dart';
+import 'package:ehs_lms/Student%20Portal/widgets/login_bg.dart';
 import 'package:flutter/material.dart';
+
+import 'forgotPassword.dart';
 
 final email = TextEditingController();
 final password = TextEditingController();
