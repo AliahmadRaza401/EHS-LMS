@@ -82,54 +82,54 @@ class _BottomNavState extends State<BottomNav> {
                               children: [
                                 Column(
                                   children: [
-                                    IconButton(
-                                      onPressed: () {
+                                    GestureDetector(
+                                      onTap: () {
                                         setState(() {
                                           iconIndex = 0;
                                         });
                                       },
-                                      icon: Icon(
-                                        Icons.home,
+                                      child: Image.asset(
+                                        "assets/navIcons/home_icon.png",
                                         color: Colors.white,
-                                        size:
+                                        width:
                                             MediaQuery.of(context).size.width *
-                                                .08,
+                                                .06,
                                       ),
                                     ),
                                   ],
                                 ),
                                 Column(
                                   children: [
-                                    IconButton(
-                                      onPressed: () {
+                                    GestureDetector(
+                                      onTap: () {
                                         setState(() {
                                           iconIndex = 1;
                                         });
                                       },
-                                      icon: Icon(
-                                        Icons.ice_skating,
+                                      child: Image.asset(
+                                        "assets/images/social_learning.png",
                                         color: Colors.white,
-                                        size:
+                                        width:
                                             MediaQuery.of(context).size.width *
-                                                .08,
+                                                .06,
                                       ),
                                     ),
                                   ],
                                 ),
                                 Column(
                                   children: [
-                                    IconButton(
-                                      onPressed: () {
+                                    GestureDetector(
+                                      onTap: () {
                                         setState(() {
                                           iconIndex = 2;
                                         });
                                       },
-                                      icon: Icon(
-                                        Icons.ice_skating,
+                                      child: Image.asset(
+                                        "assets/images/lms.png",
                                         color: Colors.white,
-                                        size:
+                                        width:
                                             MediaQuery.of(context).size.width *
-                                                .08,
+                                                .06,
                                       ),
                                     ),
                                   ],
@@ -154,31 +154,55 @@ class _BottomNavState extends State<BottomNav> {
                               children: [
                                 Column(
                                   children: [
-                                    Icon(
-                                      Icons.ice_skating,
-                                      color: Colors.white,
-                                      size: MediaQuery.of(context).size.width *
-                                          .08,
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          iconIndex = 3;
+                                        });
+                                      },
+                                      child: Image.asset(
+                                        "assets/images/notice_board.png",
+                                        color: Colors.white,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                .06,
+                                      ),
                                     ),
                                   ],
                                 ),
                                 Column(
                                   children: [
-                                    Icon(
-                                      Icons.ice_skating,
-                                      color: Colors.white,
-                                      size: MediaQuery.of(context).size.width *
-                                          .08,
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          iconIndex = 4;
+                                        });
+                                      },
+                                      child: Image.asset(
+                                        "assets/navIcons/user_icon.png",
+                                        color: Colors.white,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                .06,
+                                      ),
                                     ),
                                   ],
                                 ),
                                 Column(
                                   children: [
-                                    Icon(
-                                      Icons.ice_skating,
-                                      color: Colors.white,
-                                      size: MediaQuery.of(context).size.width *
-                                          .08,
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          iconIndex = 5;
+                                        });
+                                      },
+                                      child: Image.asset(
+                                        "assets/images/calendar.png",
+                                        color: Colors.white,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                .06,
+                                      ),
                                     ),
                                   ],
                                 ),
