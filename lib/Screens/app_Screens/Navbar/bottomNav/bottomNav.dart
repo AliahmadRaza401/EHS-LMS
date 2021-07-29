@@ -14,6 +14,7 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int iconIndex = 0;
+  bool activeColor = false, nonActiveColor = false;
 
   final mainWidget = [
     HomeScreen(),
@@ -22,10 +23,6 @@ class _BottomNavState extends State<BottomNav> {
     Text('Index 3: Events'),
     Text('Index 4: Profile'),
     Text('Index 5: Menu'),
-    Text('Index 6: Events'),
-    Text('Index 3: Profile'),
-    Text('Index 4: Menu'),
-    Text('Dont remove this is the just use for fill length'),
   ];
 
   @override
@@ -34,7 +31,7 @@ class _BottomNavState extends State<BottomNav> {
       children: [
         Scaffold(
           // backgroundColor: Colors.yellow,
-          body: mainWidget.elementAt(iconIndex),
+          body: Center(child: mainWidget.elementAt(iconIndex)),
         ),
         Positioned(
           bottom: 0.0,
@@ -90,7 +87,7 @@ class _BottomNavState extends State<BottomNav> {
                                       },
                                       child: Image.asset(
                                         "assets/navIcons/home_icon.png",
-                                        color: Colors.white,
+                                        color: Color(0xff23FFFF),
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 .06,
