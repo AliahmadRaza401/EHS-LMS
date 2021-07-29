@@ -386,13 +386,13 @@ class NavPainter extends CustomPainter {
       size.width * 0.4335380,
       size.height * 0.29,
       size.width * 0.4482915,
-      size.height * 0.72,
+      size.height * 0.7,
       size.width * 0.5023666,
-      size.height * 0.72,
+      size.height * 0.7,
     );
     path_0.cubicTo(
       size.width * 0.5558787,
-      size.height * 0.72,
+      size.height * 0.7,
       size.width * 0.5710878,
       size.height * 0.28,
       size.width * 0.5754356,
