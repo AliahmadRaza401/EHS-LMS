@@ -6,18 +6,18 @@ import 'package:flutter/material.dart';
 Widget Header(BuildContext context) {
   return Container(
     width: MediaQuery.of(context).size.width * 1,
-    height: MediaQuery.of(context).size.height * 0.17,
-    decoration: BoxDecoration(
-      gradient: RadialGradient(
-        center: Alignment(-0.76, -0.1),
-        radius: 1.1,
-        colors: [
-          Color(0xffffffff),
-          Color(0xff6EB7C6),
-        ],
-        stops: <double>[0.0, 1.0],
-      ),
-    ),
+    height: MediaQuery.of(context).size.height * 0.14,
+    // decoration: BoxDecoration(
+    //   gradient: RadialGradient(
+    //     center: Alignment(-0.76, -0.1),
+    //     radius: 1.1,
+    //     colors: [
+    //       Color(0xffffffff),
+    //       Color(0xff6EB7C6),
+    //     ],
+    //     stops: <double>[0.0, 1.0],
+    //   ),
+    // ),
     child: Padding(
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).size.height * .036,
@@ -33,7 +33,7 @@ Widget Header(BuildContext context) {
             children: [
               Image.asset(
                 'assets/images/logo.png',
-                height: MediaQuery.of(context).size.height * .1,
+                height: MediaQuery.of(context).size.height * .09,
               ),
             ],
           ),
