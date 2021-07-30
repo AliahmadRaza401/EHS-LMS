@@ -147,7 +147,7 @@ Widget homeBottomContainer(BuildContext context) {
     painter: BottomContainerCustomPaint(),
     child: Container(
       width: MediaQuery.of(context).size.width * 1,
-      height: MediaQuery.of(context).size.height * .34,
+      height: MediaQuery.of(context).size.height * .36,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -158,13 +158,58 @@ Widget homeBottomContainer(BuildContext context) {
               top: 10.0,
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AutoSizeText(
-                  "Online Notice Board",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 26.0,
-                  ),
+                Column(
+                  children: [
+                    AutoSizeText(
+                      "Online Notice Board",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 26.0,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * .09,
+                      height: MediaQuery.of(context).size.width * .09,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(80.0),
+                        gradient: RadialGradient(
+                          radius: .6,
+                          colors: [
+                            Color(0xff23FFFF),
+                            Color(0xff558D98),
+                          ],
+                        ),
+                        border: Border.all(
+                          color: Color(0xffDBE7E9),
+                          width: 1.0,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.4),
+                            spreadRadius: 2,
+                            blurRadius: 6,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.message_outlined,
+                            color: Colors.white,
+                            size: MediaQuery.of(context).size.width * .058,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

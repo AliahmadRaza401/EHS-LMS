@@ -140,42 +140,52 @@ class _SocialLearningState extends State<SocialLearning> {
 
   Widget content() {
     return Container(
-      color: Colors.white,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(30),
+        ),
+      ),
       padding: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width * 0.02,
       ),
       child: Column(
         children: [
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            width: MediaQuery.of(context).size.width * .83,
-            height: MediaQuery.of(context).size.height * .06,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8.0),
-              border: Border.all(
-                color: Color(0xff707070),
-                width: 1,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.4),
-                  spreadRadius: .2,
-                  blurRadius: 6,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-              ],
+          Padding(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).size.height * .02,
             ),
-            child: TextField(
-              decoration: InputDecoration(
-                suffixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(),
-                hintText: 'search for text(case sensitive)',
+            child: Container(
+              margin: EdgeInsets.only(top: 10),
+              width: MediaQuery.of(context).size.width * .83,
+              height: MediaQuery.of(context).size.height * .06,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8.0),
+                border: Border.all(
+                  color: Color(0xff707070),
+                  width: 1,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    spreadRadius: .2,
+                    blurRadius: 6,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(),
+                  hintText: 'search for text(case sensitive)',
+                ),
               ),
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * .6,
+          Container(
+            height: MediaQuery.of(context).size.height * .58,
             child: ListView(
               children: <Widget>[
                 contentBox(
@@ -274,6 +284,7 @@ class _SocialLearningState extends State<SocialLearning> {
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: MediaQuery.of(context).size.height * .006,
+        horizontal: MediaQuery.of(context).size.width * .01,
       ),
       child: Container(
         height: MediaQuery.of(context).size.height * .07,
@@ -302,7 +313,7 @@ class _SocialLearningState extends State<SocialLearning> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  radius: MediaQuery.of(context).size.height * .02,
+                  radius: MediaQuery.of(context).size.height * .018,
                   child: Icon(
                     Icons.done,
                     color: Colors.white,
@@ -344,7 +355,7 @@ class _SocialLearningState extends State<SocialLearning> {
                 Icon(
                   Icons.arrow_forward,
                   color: Color(0xff6EB7C6),
-                  size: MediaQuery.of(context).size.height * .05,
+                  size: MediaQuery.of(context).size.height * .04,
                 )
               ],
             )
