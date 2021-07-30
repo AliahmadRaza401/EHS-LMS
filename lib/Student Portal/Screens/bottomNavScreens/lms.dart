@@ -261,13 +261,13 @@ class _LMSState extends State<LMS> {
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * .8,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.height * .02),
-                    child: AutoSizeText(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.height * .02),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AutoSizeText(
                       title,
                       style: TextStyle(
                         color: Color(0xff59939F),
@@ -275,28 +275,30 @@ class _LMSState extends State<LMS> {
                       ),
                       maxLines: 1,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * .8,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.height * .02),
-                    child: AutoSizeText(
-                      desc,
-                      style: TextStyle(
-                        color: Color(0xffAEAEAE),
-                        fontSize: 20.0,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.height * .02),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: AutoSizeText(
+                        desc,
+                        style: TextStyle(
+                          color: Color(0xffAEAEAE),
+                          fontSize: 20.0,
+                        ),
+                        maxLines: 1,
                       ),
-                      maxLines: 1,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Padding(
