@@ -315,15 +315,18 @@ class _LMSState extends State<LMS> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * .02,
-                            ),
-                            child: Image.asset(
-                              "assets/contentImages/lms_files_icon.png",
-                              color: Color(0xff6EB7C6),
-                              scale: 1,
+                          GestureDetector(
+                            onTap: () {},
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .02,
+                              ),
+                              child: Image.asset(
+                                "assets/contentImages/lms_files_icon.png",
+                                color: Color(0xff6EB7C6),
+                                scale: 1,
+                              ),
                             ),
                           ),
                           Padding(
