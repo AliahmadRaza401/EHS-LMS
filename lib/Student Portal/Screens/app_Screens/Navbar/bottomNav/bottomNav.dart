@@ -138,7 +138,8 @@ class _BottomNavState extends State<BottomNav> {
                                       },
                                       child: Image.asset(
                                         "assets/navIcons/home_icon.png",
-                                        color: activeColor == true
+                                        key: Key("1"),
+                                        color: iconIndex == 0
                                             ? Color(0xff23FFFF)
                                             : Colors.white,
                                         width:
@@ -158,7 +159,7 @@ class _BottomNavState extends State<BottomNav> {
                                       },
                                       child: Image.asset(
                                         "assets/images/social_learning.png",
-                                        color: activeColor == true
+                                        color: iconIndex == 1
                                             ? Color(0xff23FFFF)
                                             : Colors.white,
                                         width:
@@ -178,7 +179,9 @@ class _BottomNavState extends State<BottomNav> {
                                       },
                                       child: Image.asset(
                                         "assets/images/lms.png",
-                                        color: Colors.white,
+                                        color: iconIndex == 2
+                                            ? Color(0xff23FFFF)
+                                            : Colors.white,
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 .06,
@@ -214,7 +217,9 @@ class _BottomNavState extends State<BottomNav> {
                                       },
                                       child: Image.asset(
                                         "assets/images/notice_board.png",
-                                        color: Colors.white,
+                                        color: iconIndex == 3
+                                            ? Color(0xff23FFFF)
+                                            : Colors.white,
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 .06,
@@ -232,7 +237,9 @@ class _BottomNavState extends State<BottomNav> {
                                       },
                                       child: Image.asset(
                                         "assets/navIcons/user_icon.png",
-                                        color: Colors.white,
+                                        color: iconIndex == 4
+                                            ? Color(0xff23FFFF)
+                                            : Colors.white,
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 .06,
@@ -250,7 +257,9 @@ class _BottomNavState extends State<BottomNav> {
                                       },
                                       child: Image.asset(
                                         "assets/images/calendar.png",
-                                        color: Colors.white,
+                                        color: iconIndex == 5
+                                            ? Color(0xff23FFFF)
+                                            : Colors.white,
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 .06,
