@@ -170,34 +170,6 @@ class HeaderCustomPaint extends CustomPainter {
       [0, 1],
     );
 
-    // paint0Fill.shader = ui.Gradient.radial(
-    //   Offset(
-    //     size.width * 1,
-    //     size.height * 0.3,
-    //   ),
-    //   0.2,
-    //   [
-    //     Color(0xffffffff).withOpacity(1),
-    //     Color(0xff6EB7C6).withOpacity(1),
-    //   ],
-    //   [0.0, 0.9],
-    //   // Offset(
-    //   //   // 9, 1
-    //   //   size.width * 1,
-    //   //   size.height * 0.3,
-    //   // ),
-    //   // // 2.0,
-    //   // Offset(
-    //   //   size.width * 1,
-    //   //   size.height * 1.2,
-    //   // ),
-    //   //
-    //   // [
-    //   //   Color(0xff6EB7C6).withOpacity(1),
-    //   //   Color(0xffffffff).withOpacity(1),
-    //   // ],
-    //   // [0, 1],
-    // );
     canvas.drawPath(path_0, paint0Fill);
   }
 

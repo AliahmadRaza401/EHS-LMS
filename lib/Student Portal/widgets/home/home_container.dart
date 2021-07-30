@@ -15,7 +15,7 @@ Widget homeScreenContainer(
     },
     child: Container(
       width: MediaQuery.of(context).size.width * .4,
-      height: MediaQuery.of(context).size.height * .19,
+      height: MediaQuery.of(context).size.width * .4,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(19.0),
         color: Color(color),

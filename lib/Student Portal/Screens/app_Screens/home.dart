@@ -40,7 +40,7 @@ Widget homeBg(BuildContext context) {
       ),
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).size.height * .12,
-        bottom: MediaQuery.of(context).size.height * .33,
+        bottom: MediaQuery.of(context).size.height * .35,
       ),
       child: widgetArea(context),
     ),
