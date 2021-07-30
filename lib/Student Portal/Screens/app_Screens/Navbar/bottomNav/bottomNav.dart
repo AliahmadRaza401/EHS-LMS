@@ -133,7 +133,6 @@ class _BottomNavState extends State<BottomNav> {
                                       onTap: () {
                                         setState(() {
                                           iconIndex = 0;
-                                          activeColor = !activeColor;
                                         });
                                       },
                                       child: Image.asset(
@@ -314,8 +313,10 @@ class _BottomNavState extends State<BottomNav> {
                   ],
                 ),
                 child: Image.asset(
-                  "assets/navIcons/up_icon.png",
-                  scale: 1.8,
+                  viewVisible == true
+                      ? "assets/navIcons/down_icon.png"
+                      : "assets/navIcons/up_icon.png",
+                  scale: 2.0,
                 ),
               ),
             ),
