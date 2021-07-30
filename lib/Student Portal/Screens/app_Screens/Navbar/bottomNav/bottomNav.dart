@@ -32,8 +32,6 @@ class _BottomNavState extends State<BottomNav> {
     Text('Index 10: Menu'),
   ];
 
-
-
   @override
   Widget build(BuildContext context) {
     return Stack(
