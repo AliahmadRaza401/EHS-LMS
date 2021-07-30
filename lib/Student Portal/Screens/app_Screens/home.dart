@@ -147,7 +147,7 @@ Widget homeBottomContainer(BuildContext context) {
     painter: BottomContainerCustomPaint(),
     child: Container(
       width: MediaQuery.of(context).size.width * 1,
-      height: MediaQuery.of(context).size.height * .36,
+      height: MediaQuery.of(context).size.height * .37,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -174,8 +174,8 @@ Widget homeBottomContainer(BuildContext context) {
                 Column(
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width * .09,
-                      height: MediaQuery.of(context).size.width * .09,
+                      width: MediaQuery.of(context).size.width * .11,
+                      height: MediaQuery.of(context).size.width * .11,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(80.0),
                         gradient: RadialGradient(
@@ -198,15 +198,26 @@ Widget homeBottomContainer(BuildContext context) {
                           ),
                         ],
                       ),
-                      child: Center(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.message_outlined,
-                            color: Colors.white,
-                            size: MediaQuery.of(context).size.width * .058,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.message_outlined,
+                                    color: Colors.white,
+                                    size:
+                                        MediaQuery.of(context).size.width * .05,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
+                        ],
                       ),
                     ),
                   ],

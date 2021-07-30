@@ -259,39 +259,45 @@ class _LMSState extends State<LMS> {
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.height * .02),
-                  child: AutoSizeText(
-                    title,
-                    style: TextStyle(
-                      color: Color(0xff59939F),
-                      fontSize: 20.0,
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .8,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.height * .02),
+                    child: AutoSizeText(
+                      title,
+                      style: TextStyle(
+                        color: Color(0xff59939F),
+                        fontSize: 20.0,
+                      ),
+                      maxLines: 1,
                     ),
-                    maxLines: 1,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.height * .02),
-                  child: AutoSizeText(
-                    desc,
-                    style: TextStyle(
-                      color: Color(0xffAEAEAE),
-                      fontSize: 20.0,
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .8,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.height * .02),
+                    child: AutoSizeText(
+                      desc,
+                      style: TextStyle(
+                        color: Color(0xffAEAEAE),
+                        fontSize: 20.0,
+                      ),
+                      maxLines: 1,
                     ),
-                    maxLines: 1,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(
