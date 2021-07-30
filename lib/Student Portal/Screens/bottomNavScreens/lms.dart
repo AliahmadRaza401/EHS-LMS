@@ -1,6 +1,9 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/header.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class LMS extends StatefulWidget {
   LMS({Key? key}) : super(key: key);
@@ -139,136 +142,255 @@ class _LMSState extends State<LMS> {
 
   Widget content() {
     return Container(
-      color: Colors.white,
-      child: Column(
-        children: [
-          card(context, "asdf", "asdf", "dc", "sdf"),
-        ],
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(30.0),
+        ),
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            card(
+              context,
+              "assets/contentImages/Image_1.png",
+              "FINANCIAL ACCOUNTING PRINCIPLES",
+              "(Class 2021 - Grade 12)",
+              "Core",
+              0xff6EB7C6,
+            ),
+            card(
+              context,
+              "assets/contentImages/Image_2.png",
+              "Visual Arts (AVI3M)",
+              "(Class 2021 - Asynchronous Courses)",
+              "Elective",
+              0xffD8DE84,
+            ),
+            card(
+              context,
+              "assets/contentImages/Image_3.png",
+              "AMU4M: Music, Grade 12",
+              "(Class 2021 - Grade 12)",
+              "Core",
+              0xff6EB7C6,
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget card(BuildContext context, String bgImage, String title, String dec,
-      String btnStatus) {
-    return Column(
-      children: [
-        Container(
-            width: MediaQuery.of(context).size.width * 0.84,
-            margin: new EdgeInsets.only(top: 20),
-            height: MediaQuery.of(context).size.height * 0.34,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-                border: Border.all(color: Color(0xff707070))),
-            child: Column(
+  Widget card(BuildContext context, String bgImage, String title, String desc,
+      String btnStatus, int color) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: MediaQuery.of(context).size.height * .014,
+      ),
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.82,
+        height: MediaQuery.of(context).size.height * 0.44,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.2,
-                  width: MediaQuery.of(context).size.width * 0.84,
+                  width: MediaQuery.of(context).size.width * 0.82,
+                  height: MediaQuery.of(context).size.height * 0.22,
                   decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage(
+                        bgImage,
                       ),
-                      image: new DecorationImage(
-                        image: AssetImage(bgImage),
-                        fit: BoxFit.cover,
-                      )),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "FINANCIAL",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                      fit: BoxFit.fill,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * .14,
+                    height: MediaQuery.of(context).size.height * .04,
+                    decoration: BoxDecoration(
+                      color: Color(color),
+                      borderRadius: BorderRadius.circular(6.0),
+                    ),
+                    child: Center(
+                      child: AutoSizeText(
+                        btnStatus,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
                         ),
-                        Text(
-                          "ACCOUNTING",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                        Text(
-                          "PRINCIPLES",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ],
+                        maxLines: 1,
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                  height: 20,
-                  margin: EdgeInsets.only(left: 240, top: 10),
-                  child: ElevatedButton(
-                      child: Text(btnStatus),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        primary: Color(0xff6EB7C6),
-                        padding: EdgeInsets.only(top: -1, bottom: -1),
-                      )),
-                ),
-                Text(
-                  title,
-                  style: TextStyle(
-                      color: Color(0xff59939F),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  dec,
-                  style: TextStyle(
-                      color: Color(0xffAEAEAE),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
-                )
               ],
-            )),
-        Container(
-          height: 50,
-          width: MediaQuery.of(context).size.width * 0.84,
-          decoration:
-              BoxDecoration(border: Border.all(color: Color(0xff707070))),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.video_call,
-                color: Color(0xff59939F),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.height * .02),
+                  child: AutoSizeText(
+                    title,
+                    style: TextStyle(
+                      color: Color(0xff59939F),
+                      fontSize: 20.0,
+                    ),
+                    maxLines: 1,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.height * .02),
+                  child: AutoSizeText(
+                    desc,
+                    style: TextStyle(
+                      color: Color(0xffAEAEAE),
+                      fontSize: 20.0,
+                    ),
+                    maxLines: 1,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * .01,
               ),
-              Icon(
-                Icons.sms,
-                color: Color(0xff59939F),
+              child: Row(
+                children: [
+                  ClipPath(
+                    clipper: OvalTopBorderClipper(),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * .82,
+                      height: MediaQuery.of(context).size.height * .07,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(.06),
+                        borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(20.0),
+                          bottomLeft: Radius.circular(20.0),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * .02,
+                            ),
+                            child: Image.asset(
+                              "assets/contentImages/lms_files_icon.png",
+                              color: Color(0xff6EB7C6),
+                              scale: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * .02,
+                            ),
+                            child: Image.asset(
+                              "assets/contentImages/lms_message_icon.png",
+                              color: Color(0xff6EB7C6),
+                              scale: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * .02,
+                            ),
+                            child: Image.asset(
+                              "assets/contentImages/lms_status_icon.png",
+                              color: Color(0xff6EB7C6),
+                              scale: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * .02,
+                            ),
+                            child: Image.asset(
+                              "assets/contentImages/lms_faq_icon.png",
+                              color: Color(0xff6EB7C6),
+                              scale: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * .02,
+                            ),
+                            child: Image.asset(
+                              "assets/contentImages/lms_download_icon.png",
+                              color: Color(0xff6EB7C6),
+                              scale: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * .02,
+                            ),
+                            child: Image.asset(
+                              "assets/contentImages/lms_video_icon.png",
+                              color: Color(0xff6EB7C6),
+                              scale: 1,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              Icon(
-                Icons.audiotrack,
-                color: Color(0xff59939F),
-              ),
-              Icon(
-                Icons.question_answer,
-                color: Color(0xff59939F),
-              ),
-              Icon(
-                Icons.download,
-                color: Color(0xff59939F),
-              ),
-              Icon(
-                Icons.camera,
-                color: Color(0xff59939F),
-              ),
-            ],
-          ),
-        )
-      ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
