@@ -112,7 +112,7 @@ Widget homeHeader(BuildContext context) {
                 ),
                 Row(
                   children: [
-                    currentDate(),
+                    currentDate(Colors.white, 14.0),
                   ],
                 ),
               ],

@@ -23,58 +23,94 @@ class _SideNavSmallState extends State<SideNavSmall> {
           Icon(
             Icons.menu,
             color: Colors.white,
-            size: 30,
+            size: 35,
+          ),
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
             "assets/navIcons/profile.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
+          ),
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
-            "assets/navIcons/resume.png",
+            "assets/navIcons/attendance.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
+          ),
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
-            "assets/navIcons/group.png",
+            "assets/navIcons/enrollmentedit.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
+          ),
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
-            "assets/navIcons/file.png",
+            "assets/navIcons/idcard.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
+          ),
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
-            "assets/navIcons/pie-chart.png",
+            "assets/navIcons/invoice.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
+          ),
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
-            "assets/navIcons/Outline.png",
+            "assets/navIcons/medicalrecord.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
           ),
-          Image.asset(
-            "assets/navIcons/login.png",
-            color: Colors.white,
-            scale: .9,
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
             "assets/navIcons/notification.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
+          ),
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
-            "assets/navIcons/sport.png",
+            "assets/navIcons/socialactivities.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
+          ),
+          SizedBox(
+            height: 15,
           ),
           Image.asset(
-            "assets/navIcons/logout.png",
+            "assets/navIcons/sociallearning.png",
             color: Colors.white,
-            scale: .9,
+            height: 30,
+            width: 30,
           ),
+          // Image.asset(
+          //   "assets/navIcons/logout.png",
+          //   color: Colors.white,
+          //   scale: .9,
+          // ),
         ],
       ),
     );

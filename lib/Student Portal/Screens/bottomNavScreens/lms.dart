@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/lms/flip_drawer.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -83,33 +84,16 @@ class _LMSState extends State<LMS> {
                   children: [
                     Row(
                       children: [
-                        Icon(
-                          Icons.supervised_user_circle_rounded,
+                        Image.asset(
+                          'assets/images/lms.png',
+                          height: MediaQuery.of(context).size.height * .025,
                           color: Colors.white,
-                          size: 20,
+                        ),
+                        SizedBox(
+                          width: 5,
                         ),
                         Text(
-                          "Profile",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * .06,
-                ),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.social_distance,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        Text(
-                          "Social Learning",
+                          "Learning Management System",
                           style: TextStyle(color: Colors.white),
                         ),
                       ],
@@ -124,12 +108,12 @@ class _LMSState extends State<LMS> {
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .1,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .69,
                   child: SideNavSmall(),
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .87,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .69,
                   child: content(),
                 ),
               ],
@@ -142,12 +126,12 @@ class _LMSState extends State<LMS> {
 
   Widget content() {
     return Container(
+      padding: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(30.0),
-        ),
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(10),
+          )),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -187,219 +171,225 @@ class _LMSState extends State<LMS> {
       padding: EdgeInsets.symmetric(
         vertical: MediaQuery.of(context).size.height * .014,
       ),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.82,
-        height: MediaQuery.of(context).size.height * 0.44,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.82,
-                  height: MediaQuery.of(context).size.height * 0.22,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    ),
-                    image: DecorationImage(
-                      image: AssetImage(
-                        bgImage,
-                      ),
-                      fit: BoxFit.fill,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * .14,
-                    height: MediaQuery.of(context).size.height * .04,
-                    decoration: BoxDecoration(
-                      color: Color(color),
-                      borderRadius: BorderRadius.circular(6.0),
-                    ),
-                    child: Center(
-                      child: AutoSizeText(
-                        btnStatus,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .8,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.height * .02),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AutoSizeText(
-                      title,
-                      style: TextStyle(
-                        color: Color(0xff59939F),
-                        fontSize: 20.0,
-                      ),
-                      maxLines: 1,
-                    ),
-                  ],
-                ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => FlipDrawer()));
+        },
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.82,
+          height: MediaQuery.of(context).size.height * 0.44,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20.0),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: Offset(0, 3), // changes position of shadow
               ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .8,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.height * .02),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: AutoSizeText(
-                        desc,
-                        style: TextStyle(
-                          color: Color(0xffAEAEAE),
-                          fontSize: 20.0,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * .01,
-              ),
-              child: Row(
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
                 children: [
-                  ClipPath(
-                    clipper: OvalTopBorderClipper(),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * .82,
-                      height: MediaQuery.of(context).size.height * .07,
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(.06),
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(20.0),
-                          bottomLeft: Radius.circular(20.0),
-                        ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.82,
+                    height: MediaQuery.of(context).size.height * 0.22,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: () {},
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal:
-                                    MediaQuery.of(context).size.width * .02,
-                              ),
-                              child: Image.asset(
-                                "assets/contentImages/lms_files_icon.png",
-                                color: Color(0xff6EB7C6),
-                                scale: 1,
-                              ),
-                            ),
+                      image: DecorationImage(
+                        image: AssetImage(
+                          bgImage,
+                        ),
+                        fit: BoxFit.fill,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * .14,
+                      height: MediaQuery.of(context).size.height * .04,
+                      decoration: BoxDecoration(
+                        color: Color(color),
+                        borderRadius: BorderRadius.circular(6.0),
+                      ),
+                      child: Center(
+                        child: AutoSizeText(
+                          btnStatus,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * .02,
-                            ),
-                            child: Image.asset(
-                              "assets/contentImages/lms_message_icon.png",
-                              color: Color(0xff6EB7C6),
-                              scale: 1,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * .02,
-                            ),
-                            child: Image.asset(
-                              "assets/contentImages/lms_status_icon.png",
-                              color: Color(0xff6EB7C6),
-                              scale: 1,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * .02,
-                            ),
-                            child: Image.asset(
-                              "assets/contentImages/lms_faq_icon.png",
-                              color: Color(0xff6EB7C6),
-                              scale: 1,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * .02,
-                            ),
-                            child: Image.asset(
-                              "assets/contentImages/lms_download_icon.png",
-                              color: Color(0xff6EB7C6),
-                              scale: 1,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * .02,
-                            ),
-                            child: Image.asset(
-                              "assets/contentImages/lms_video_icon.png",
-                              color: Color(0xff6EB7C6),
-                              scale: 1,
-                            ),
-                          ),
-                        ],
+                          maxLines: 1,
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .8,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.height * .02),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      AutoSizeText(
+                        title,
+                        style: TextStyle(
+                          color: Color(0xff59939F),
+                          fontSize: 20.0,
+                        ),
+                        maxLines: 1,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .8,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.height * .02),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: AutoSizeText(
+                          desc,
+                          style: TextStyle(
+                            color: Color(0xffAEAEAE),
+                            fontSize: 20.0,
+                          ),
+                          maxLines: 1,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * .01,
+                ),
+                child: Row(
+                  children: [
+                    ClipPath(
+                      clipper: OvalTopBorderClipper(),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * .82,
+                        height: MediaQuery.of(context).size.height * .07,
+                        decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(.06),
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(20.0),
+                            bottomLeft: Radius.circular(20.0),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap: () {},
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width * .02,
+                                ),
+                                child: Image.asset(
+                                  "assets/contentImages/lms_files_icon.png",
+                                  color: Color(0xff6EB7C6),
+                                  scale: 1,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .02,
+                              ),
+                              child: Image.asset(
+                                "assets/contentImages/lms_message_icon.png",
+                                color: Color(0xff6EB7C6),
+                                scale: 1,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .02,
+                              ),
+                              child: Image.asset(
+                                "assets/contentImages/lms_status_icon.png",
+                                color: Color(0xff6EB7C6),
+                                scale: 1,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .02,
+                              ),
+                              child: Image.asset(
+                                "assets/contentImages/lms_faq_icon.png",
+                                color: Color(0xff6EB7C6),
+                                scale: 1,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .02,
+                              ),
+                              child: Image.asset(
+                                "assets/contentImages/lms_download_icon.png",
+                                color: Color(0xff6EB7C6),
+                                scale: 1,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * .02,
+                              ),
+                              child: Image.asset(
+                                "assets/contentImages/lms_video_icon.png",
+                                color: Color(0xff6EB7C6),
+                                scale: 1,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'Student Portal/Screens/Splash/splashScreen.dart';
 
 void main() {

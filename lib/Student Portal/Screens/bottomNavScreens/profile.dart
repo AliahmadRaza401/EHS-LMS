@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/header.dart';
+import 'package:ehs_lms/Student%20Portal/widgets/student_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
@@ -99,23 +100,6 @@ class _ProfileState extends State<Profile> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .06,
                 ),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.social_distance,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        Text(
-                          "Notices",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
               ],
             ),
           ),
@@ -124,12 +108,12 @@ class _ProfileState extends State<Profile> {
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .1,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .69,
                   child: SideNavSmall(),
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .87,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .69,
                   child: content(),
                 ),
               ],
@@ -141,6 +125,6 @@ class _ProfileState extends State<Profile> {
   }
 
   Widget content() {
-    return Text("Profile");
+    return StudentProfile();
   }
 }

@@ -101,7 +101,7 @@ Widget widgetArea(BuildContext context) {
   );
 }
 
-currentDate() {
+currentDate(color, size) {
   List months = [
     'January',
     'February',
@@ -122,8 +122,8 @@ currentDate() {
   return AutoSizeText(
     '$currentDay' + " " + months[currentMon - 1],
     style: TextStyle(
-      color: Colors.white,
-      fontSize: 14.0,
+      color: color,
+      fontSize: size,
       fontWeight: FontWeight.w700,
       fontFamily: "Segoe UI",
     ),

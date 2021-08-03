@@ -84,27 +84,7 @@ class _NoticesState extends State<Notices> {
                     Row(
                       children: [
                         Icon(
-                          Icons.supervised_user_circle_rounded,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        Text(
-                          "Profile",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * .06,
-                ),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.social_distance,
+                          Icons.notes,
                           color: Colors.white,
                           size: 20,
                         ),
@@ -124,12 +104,12 @@ class _NoticesState extends State<Notices> {
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .1,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .69,
                   child: SideNavSmall(),
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .87,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .69,
                   child: content(),
                 ),
               ],
@@ -142,16 +122,12 @@ class _NoticesState extends State<Notices> {
 
   Widget content() {
     return Container(
+      padding: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Colors.black),
-        borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(30),
-        ),
-      ),
-      padding: EdgeInsets.symmetric(
-        horizontal: MediaQuery.of(context).size.width * 0.02,
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(10),
+          )),
       child: Container(
         margin: EdgeInsets.only(top: 20),
         child: Column(children: [

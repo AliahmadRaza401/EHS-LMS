@@ -32,6 +32,10 @@ dependencies:
   pinput: ^1.2.0
   flutter_custom_clippers: ^2.0.0
   navigation_action_bar: ^0.0.1-nullsafety.0
+  # syncfusion_flutter_calendar: 
+  table_calendar: ^2.2.1
+  shared_preferences: 
+  expansion_tile_card: ^2.0.0
 
 
 dev_dependencies:

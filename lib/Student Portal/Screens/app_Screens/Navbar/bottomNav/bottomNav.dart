@@ -1,9 +1,11 @@
 import 'dart:ui' as ui;
 
+import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/event_schedual.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/lms.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/notices.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/profile.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/social_learning.dart';
+import 'package:ehs_lms/Student%20Portal/widgets/calender.dart';
 import 'package:flutter/material.dart';
 
 import '../../home.dart';
@@ -27,7 +29,7 @@ class _BottomNavState extends State<BottomNav> {
     LMS(),
     Notices(),
     Profile(),
-    Text('Index 5: Menu'),
+    EventSchedual(),
     Text('Index 6: Menu'),
     Text('Index 7: Menu'),
     Text('Index 8: Menu'),
@@ -45,7 +47,7 @@ class _BottomNavState extends State<BottomNav> {
         ),
         Positioned(
           left: MediaQuery.of(context).size.width * .02,
-          bottom: MediaQuery.of(context).size.height * .12,
+          bottom: MediaQuery.of(context).size.height * .1,
           child: Visibility(
             maintainSize: true,
             maintainAnimation: true,

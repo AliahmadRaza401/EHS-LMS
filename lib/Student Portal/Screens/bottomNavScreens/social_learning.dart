@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/home.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/header.dart';
 import 'package:flutter/material.dart';
 
@@ -57,42 +58,28 @@ class _SocialLearningState extends State<SocialLearning> {
             ),
             child: Row(
               children: [
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.home,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        Text(
-                          "Home",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * .06,
-                ),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.supervised_user_circle_rounded,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        Text(
-                          "Profile",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ],
+                GestureDetector(
+                  onTap: () {
+                    // Navigator.of(context).push(
+                    //     MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.home,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                          Text(
+                            "Home",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .06,
@@ -122,12 +109,12 @@ class _SocialLearningState extends State<SocialLearning> {
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .1,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .69,
                   child: SideNavSmall(),
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .87,
-                  height: MediaQuery.of(context).size.height * .68,
+                  height: MediaQuery.of(context).size.height * .69,
                   child: content(),
                 ),
               ],
@@ -143,7 +130,7 @@ class _SocialLearningState extends State<SocialLearning> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(30),
+          bottomRight: Radius.circular(10),
         ),
       ),
       padding: EdgeInsets.symmetric(
@@ -153,7 +140,7 @@ class _SocialLearningState extends State<SocialLearning> {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).size.height * .02,
+              bottom: MediaQuery.of(context).size.height * 0,
             ),
             child: Container(
               margin: EdgeInsets.only(top: 10),

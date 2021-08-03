@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/social_learning.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/lms/flip_drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ Widget homeScreenContainer(
     onTap: () {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => SocialLearning(),
+          builder: (context) => FlipDrawer(),
         ),
       );
     },
