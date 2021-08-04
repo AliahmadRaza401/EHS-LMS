@@ -1,5 +1,6 @@
 import 'dart:ui' as ui;
 
+import 'package:ehs_lms/Student%20Portal/Navigator/pageNavigator.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/event_schedual.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/lms.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/notices.dart';
@@ -13,15 +14,20 @@ import '../../home.dart';
 bool viewVisible = false;
 
 class BottomNav extends StatefulWidget {
-  const BottomNav({Key? key}) : super(key: key);
+  // const BottomNav({Key? key}) : super(key: key);
+  String currentPage;
+  BottomNav({required this.currentPage});
 
   @override
-  _BottomNavState createState() => _BottomNavState();
+  _BottomNavState createState() => _BottomNavState(currrentPage: currentPage);
 }
 
 class _BottomNavState extends State<BottomNav> {
+  _BottomNavState({required this.currrentPage});
   int iconIndex = 0;
   bool activeColor = false, nonActiveColor = false;
+
+  String currrentPage;
 
   final mainWidget = [
     HomeScreen(),
@@ -42,9 +48,9 @@ class _BottomNavState extends State<BottomNav> {
     return Stack(
       children: [
         Scaffold(
-          // backgroundColor: Colors.yellow,
-          body: Center(child: mainWidget.elementAt(iconIndex)),
-        ),
+            // backgroundColor: Colors.yellow,
+            // body: Center(child: mainWidget.elementAt(iconIndex)),
+            body: PageNavigator(page: currrentPage)),
         Positioned(
           left: MediaQuery.of(context).size.width * .02,
           bottom: MediaQuery.of(context).size.height * .1,
@@ -137,13 +143,13 @@ class _BottomNavState extends State<BottomNav> {
                                     GestureDetector(
                                       onTap: () {
                                         setState(() {
-                                          iconIndex = 0;
+                                          currrentPage = "home";
                                         });
                                       },
                                       child: Image.asset(
                                         "assets/navIcons/home_icon.png",
                                         key: Key("1"),
-                                        color: iconIndex == 0
+                                        color: currrentPage == "home"
                                             ? Color(0xff23FFFF)
                                             : Colors.white,
                                         width:
@@ -158,12 +164,12 @@ class _BottomNavState extends State<BottomNav> {
                                     GestureDetector(
                                       onTap: () {
                                         setState(() {
-                                          iconIndex = 1;
+                                          currrentPage = "social_learning";
                                         });
                                       },
                                       child: Image.asset(
                                         "assets/images/social_learning.png",
-                                        color: iconIndex == 1
+                                        color: currrentPage == "social_learning"
                                             ? Color(0xff23FFFF)
                                             : Colors.white,
                                         width:
@@ -178,12 +184,12 @@ class _BottomNavState extends State<BottomNav> {
                                     GestureDetector(
                                       onTap: () {
                                         setState(() {
-                                          iconIndex = 2;
+                                          currrentPage = "lms";
                                         });
                                       },
                                       child: Image.asset(
                                         "assets/images/lms.png",
-                                        color: iconIndex == 2
+                                        color: currrentPage == "lms"
                                             ? Color(0xff23FFFF)
                                             : Colors.white,
                                         width:
@@ -216,12 +222,12 @@ class _BottomNavState extends State<BottomNav> {
                                     GestureDetector(
                                       onTap: () {
                                         setState(() {
-                                          iconIndex = 3;
+                                          currrentPage = "notice_board";
                                         });
                                       },
                                       child: Image.asset(
                                         "assets/images/notice_board.png",
-                                        color: iconIndex == 3
+                                        color: currrentPage == "notice_board"
                                             ? Color(0xff23FFFF)
                                             : Colors.white,
                                         width:
@@ -236,12 +242,12 @@ class _BottomNavState extends State<BottomNav> {
                                     GestureDetector(
                                       onTap: () {
                                         setState(() {
-                                          iconIndex = 4;
+                                          currrentPage = "userProfile";
                                         });
                                       },
                                       child: Image.asset(
                                         "assets/navIcons/user_icon.png",
-                                        color: iconIndex == 4
+                                        color: currrentPage == "userProfile"
                                             ? Color(0xff23FFFF)
                                             : Colors.white,
                                         width:
@@ -256,12 +262,12 @@ class _BottomNavState extends State<BottomNav> {
                                     GestureDetector(
                                       onTap: () {
                                         setState(() {
-                                          iconIndex = 5;
+                                          currrentPage = "eventSchedule";
                                         });
                                       },
                                       child: Image.asset(
                                         "assets/images/calendar.png",
-                                        color: iconIndex == 5
+                                        color: currrentPage == "eventSchedule"
                                             ? Color(0xff23FFFF)
                                             : Colors.white,
                                         width:

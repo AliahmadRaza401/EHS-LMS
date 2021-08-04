@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/bottomNav/bottomNav.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
-import 'package:ehs_lms/Student%20Portal/Screens/lms/flip_drawer.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/flip_drawer_main.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -173,8 +174,13 @@ class _LMSState extends State<LMS> {
       ),
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => FlipDrawer()));
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => BottomNav(
+                currentPage: 'flipDrawer',
+              ),
+            ),
+          );
         },
         child: Container(
           width: MediaQuery.of(context).size.width * 0.82,
