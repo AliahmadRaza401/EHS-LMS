@@ -220,26 +220,6 @@ class _FlipClassState extends State<FlipClass> {
                         'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'
                     // 'assets/video/butterfly.mp4'
                     )),
-            // Container(
-            //   margin: EdgeInsets.only(top: 2),
-            //   child: Container(
-            //     decoration: BoxDecoration(
-            //         color: Color(0xff6EB7C6),
-            //         borderRadius: BorderRadius.only(
-            //             topLeft: Radius.circular(10),
-            //             topRight: Radius.circular(10))),
-            //     height: MediaQuery.of(context).size.height * 0.05,
-            //     child: Row(
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: [
-            //         Text(
-            //           "Unit 1",
-            //           style: TextStyle(color: Colors.white, fontSize: 20),
-            //         )
-            //       ],
-            //     ),
-            //   ),
-            // ),
             InnerShadow(
               blur: 5,
               color: const Color(0xff5F9FAC),
@@ -263,107 +243,104 @@ class _FlipClassState extends State<FlipClass> {
                 ),
               ),
             ),
-
             Row(
               children: [
                 Container(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.06),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 15),
-                        child: Text("Lesson 1"),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "Introduction to mangerial Accounting",
-                        style: TextStyle(fontSize: 15),
-                      ),
-                      SizedBox(height: 4),
-                      Row(
-                        children: [
-                          Text("Description: "),
-                          Text(
-                            "Accounting definition, Identify the",
+                  child: Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15),
+                          child: Text("Lesson 1"),
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          "Introduction to mangerial Accounting",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        SizedBox(height: 4),
+                        Text("Description: "),
+
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * .7,
+                          child: Text(
+                            "Accounting definition, Identify the activities adn users associated with Accounting.",
+                            maxLines: 2,
+                            overflow: TextOverflow.fade,
                             style: TextStyle(
                                 fontSize: 15, color: Color(0xff6EB7C6)),
-                          )
-                        ],
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "activities adn users associated with Accounting.",
-                        style:
-                            TextStyle(fontSize: 15, color: Color(0xff6EB7C6)),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "● Three activities ● Accounting data users ● Basic concepts",
-                        style: TextStyle(fontSize: 10),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        '● Fundamentals of Accounting ● Assets ● Liabilities ● owner’s equity ',
-                        style: TextStyle(fontSize: 10),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        '● objectives of Accounting',
-                        style: TextStyle(fontSize: 10),
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/contentImages/pfile.png',
                           ),
-                          SizedBox(width: 10),
-                          Text(
-                            "Introduction to managerial Accounting",
-                            style: TextStyle(fontSize: 15),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/contentImages/wfile.png',
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            "Lesson plan",
-                            style: TextStyle(fontSize: 15),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/contentImages/dfile.png',
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            "AFL",
-                            style: TextStyle(fontSize: 15),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/contentImages/lfile.png',
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            "Introduction to managerial Accounting",
-                            style: TextStyle(fontSize: 15),
-                          )
-                        ],
-                      ),
-                    ],
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          "● Three activities ● Accounting data users ● Basic concepts",
+                          style: TextStyle(fontSize: 10),
+                        ),
+                        SizedBox(height: 4),
+                        // Text(
+                        //   '● Fundamentals of Accounting ● Assets ● Liabilities ● owner’s equity ',
+                        //   style: TextStyle(fontSize: 10),
+                        // ),
+                        SizedBox(height: 4),
+                        Text(
+                          '● objectives of Accounting',
+                          style: TextStyle(fontSize: 10),
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/contentImages/pfile.png',
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              "Introduction to managerial Accounting",
+                              style: TextStyle(fontSize: 15),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/contentImages/wfile.png',
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              "Lesson plan",
+                              style: TextStyle(fontSize: 15),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/contentImages/dfile.png',
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              "AFL",
+                              style: TextStyle(fontSize: 15),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/contentImages/lfile.png',
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              "Introduction to managerial Accounting",
+                              style: TextStyle(fontSize: 15),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

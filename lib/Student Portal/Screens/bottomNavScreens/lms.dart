@@ -262,13 +262,16 @@ class _LMSState extends State<LMS> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      AutoSizeText(
-                        title,
-                        style: TextStyle(
-                          color: Color(0xff59939F),
-                          fontSize: 20.0,
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .7,
+                        child: AutoSizeText(
+                          title,
+                          style: TextStyle(
+                            color: Color(0xff59939F),
+                            fontSize: 20.0,
+                          ),
+                          maxLines: 1,
                         ),
-                        maxLines: 1,
                       ),
                     ],
                   ),

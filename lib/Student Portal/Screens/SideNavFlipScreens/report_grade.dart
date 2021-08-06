@@ -133,6 +133,7 @@ class _ReportGradeState extends State<ReportGrade> {
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(
                   vertical: MediaQuery.of(context).size.height * 0.02,
+                  horizontal: MediaQuery.of(context).size.width * 0.02,
                 ),
                 //height: MediaQuery.of(context).size.height * 0.10,
                 child: Text(
@@ -154,7 +155,7 @@ class _ReportGradeState extends State<ReportGrade> {
                     Divider(),
                     _buttonWidget(),
                     Divider(),
-                    _textWidget("Assessment for LearningWeight", "0%"),
+                    _textWidget("Assessment for testWeight", "0%"),
                     Divider(),
                     _buttonWidget(),
                     Divider(),
