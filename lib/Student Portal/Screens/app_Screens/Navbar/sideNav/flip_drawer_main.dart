@@ -119,7 +119,7 @@ class _FlipDrawerState extends State<FlipDrawer> {
                                 'assets/images/lms.png',
                                 color: Colors.white,
                                 height:
-                                    MediaQuery.of(context).size.height * 0.04,
+                                    MediaQuery.of(context).size.height * 0.03,
                               ),
                               SizedBox(
                                 width: 5,
@@ -147,7 +147,7 @@ class _FlipDrawerState extends State<FlipDrawer> {
                                 'assets/contentImages/flip.png',
                                 color: Colors.white,
                                 height:
-                                    MediaQuery.of(context).size.height * 0.04,
+                                    MediaQuery.of(context).size.height * 0.02,
                               ),
                               SizedBox(
                                 width: 5,
@@ -179,7 +179,7 @@ class _FlipDrawerState extends State<FlipDrawer> {
                             Column(
                               children: [
                                 flip(context, 'assets/contentImages/flip.png',
-                                    "Flip Class"),
+                                    "Flip Class", "flipClass"),
                               ],
                             ),
                             Column(
@@ -212,7 +212,7 @@ class _FlipDrawerState extends State<FlipDrawer> {
                         height: 5,
                       ),
                       flip(context, 'assets/contentImages/discussion.png',
-                          "Discussion"),
+                          "Discussion", "discussion"),
                       SizedBox(
                         height: 5,
                       ),
@@ -226,7 +226,7 @@ class _FlipDrawerState extends State<FlipDrawer> {
                         height: 5,
                       ),
                       flip(context, 'assets/contentImages/assign.png',
-                          "Assesment"),
+                          "Assesment", "assesment"),
                       SizedBox(
                         height: 5,
                       ),
@@ -239,8 +239,8 @@ class _FlipDrawerState extends State<FlipDrawer> {
                       SizedBox(
                         height: 5,
                       ),
-                      flip(
-                          context, 'assets/contentImages/qmark.png', "Quizzes"),
+                      flip(context, 'assets/contentImages/qmark.png', "Quizzes",
+                          "quizzes"),
                       SizedBox(
                         height: 5,
                       ),
@@ -254,7 +254,7 @@ class _FlipDrawerState extends State<FlipDrawer> {
                         height: 5,
                       ),
                       flip(context, 'assets/contentImages/download.png',
-                          "Resourses"),
+                          "Resourses", "resourses"),
                       SizedBox(
                         height: 5,
                       ),
@@ -268,7 +268,7 @@ class _FlipDrawerState extends State<FlipDrawer> {
                         height: 5,
                       ),
                       flip(context, 'assets/contentImages/live.png',
-                          "Live Lecture"),
+                          "Live Lecture", "liveLecture"),
                       SizedBox(
                         height: 5,
                       ),
@@ -293,22 +293,28 @@ class _FlipDrawerState extends State<FlipDrawer> {
   }
 }
 
-Widget flip(BuildContext context, String img, String txt) {
-  return Row(
-    children: [
-      Image.asset(
-        img,
-        height: MediaQuery.of(context).size.height * 0.05,
-        width: MediaQuery.of(context).size.width * 0.08,
-      ),
-      SizedBox(
-        width: 15,
-      ),
-      Text(txt,
-          style: TextStyle(
-            fontSize: 23,
-            color: Colors.white,
-          ))
-    ],
+Widget flip(BuildContext context, String img, String txt, String goTo) {
+  return GestureDetector(
+    onTap: () {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => BottomNav(currentPage: goTo)));
+    },
+    child: Row(
+      children: [
+        Image.asset(
+          img,
+          height: MediaQuery.of(context).size.height * 0.05,
+          width: MediaQuery.of(context).size.width * 0.08,
+        ),
+        SizedBox(
+          width: 15,
+        ),
+        Text(txt,
+            style: TextStyle(
+              fontSize: 23,
+              color: Colors.white,
+            ))
+      ],
+    ),
   );
 }

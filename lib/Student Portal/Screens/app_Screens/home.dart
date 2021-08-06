@@ -296,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Padding(
                             padding: EdgeInsets.symmetric(
                               vertical:
-                                  MediaQuery.of(context).size.height * .04,
+                                  MediaQuery.of(context).size.height * .01,
                               horizontal:
                                   MediaQuery.of(context).size.width * .16,
                             ),

@@ -1,4 +1,10 @@
+import 'package:ehs_lms/Student%20Portal/Screens/SideNavFlipScreens/assesment.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/SideNavFlipScreens/discussion.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/SideNavFlipScreens/flipclaas.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/SideNavFlipScreens/live_lecture.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/SideNavFlipScreens/quizzes.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/SideNavFlipScreens/report_grade.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/SideNavFlipScreens/resourses.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/home.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/event_schedual.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/lms.dart';
@@ -34,6 +40,18 @@ class PageNavigator extends StatelessWidget {
       child = FlipDrawer();
     } else if (page == "flipClass") {
       child = FlipClass();
+    } else if (page == "discussion") {
+      child = Discussion();
+    } else if (page == "assesment") {
+      child = Assesment();
+    } else if (page == "quizzes") {
+      child = Quizzes();
+    } else if (page == "resourses") {
+      child = Resourses();
+    } else if (page == "liveLecture") {
+      child = LiveLacture();
+    } else if (page == "reportGrade") {
+      child = ReportGrade();
     } else {
       child = HomeScreen();
     }

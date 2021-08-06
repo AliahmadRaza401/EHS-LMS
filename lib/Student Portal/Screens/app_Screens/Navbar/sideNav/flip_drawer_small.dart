@@ -21,17 +21,13 @@ class _FlipDrawerSmallState extends State<FlipDrawerSmall> {
       child: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          IconButton(
-              onPressed: () {
+          GestureDetector(
+              onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) =>
                         BottomNav(currentPage: 'flipDrawer')));
               },
-              icon: Icon(
-                Icons.menu,
-                color: Colors.white,
-                size: 36,
-              )),
+              child: menu(Colors.white, 'assets/contentImages/menu.png')),
           divider(),
           menu(Color(0xff23FFFF), 'assets/contentImages/lms_files_icon.png'),
           divider(),
