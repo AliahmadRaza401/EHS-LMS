@@ -264,7 +264,6 @@ class _FlipClassState extends State<FlipClass> {
                         ),
                         SizedBox(height: 4),
                         Text("Description: "),
-
                         SizedBox(
                           width: MediaQuery.of(context).size.width * .7,
                           child: Text(
