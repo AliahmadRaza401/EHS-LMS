@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/bottomNav/bottomNav.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/home.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/header.dart';
@@ -65,18 +66,25 @@ class _SocialLearningState extends State<SocialLearning> {
                   },
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.home,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          Text(
-                            "Home",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  BottomNav(currentPage: "home")));
+                        },
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.home,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                            Text(
+                              "Home",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -88,13 +96,12 @@ class _SocialLearningState extends State<SocialLearning> {
                   children: [
                     Row(
                       children: [
-                        Icon(
-                          Icons.social_distance,
-                          color: Colors.white,
-                          size: 20,
+                        Image.asset(
+                          "assets/navIcons/1social-media.png",
+                          height: 20,
                         ),
                         Text(
-                          "Social Learning",
+                          " Social Learning",
                           style: TextStyle(color: Colors.white),
                         ),
                       ],
