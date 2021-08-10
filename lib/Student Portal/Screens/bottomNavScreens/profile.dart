@@ -46,17 +46,19 @@ class _ProfileState extends State<Profile> {
 
   Widget body() {
     return Container(
+      
       width: MediaQuery.of(context).size.width * .97,
       child: Column(
         children: [
           Container(
+            
             padding: EdgeInsets.symmetric(
               vertical: MediaQuery.of(context).size.height * .02,
               horizontal: MediaQuery.of(context).size.width * .06,
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+              topLeft: Radius.circular(30), topRight: Radius.circular(30)),
               color: Color(0xff558D98),
             ),
             child: Row(
@@ -112,6 +114,7 @@ class _ProfileState extends State<Profile> {
             ),
           ),
           Container(
+            
             child: Row(
               children: [
                 SizedBox(
@@ -133,6 +136,7 @@ class _ProfileState extends State<Profile> {
   }
 
   Widget content() {
+    
     return StudentProfile();
   }
 }

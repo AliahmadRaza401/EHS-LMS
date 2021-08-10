@@ -63,17 +63,17 @@ class _NoticesState extends State<Notices> {
                 Column(
                   children: [
                     GestureDetector(
-                       onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) =>
-                                  BottomNav(currentPage: "home")));
-                        },
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                BottomNav(currentPage: "home")));
+                      },
                       child: Row(
                         children: [
                           Icon(
                             Icons.home,
                             color: Colors.white,
-                            size: 20,
+                            size: MediaQuery.of(context).size.height * .02,
                           ),
                           Text(
                             "Home",
@@ -91,7 +91,13 @@ class _NoticesState extends State<Notices> {
                   children: [
                     Row(
                       children: [
-                        Image(image: AssetImage('assets\images\notice_board.png'),color: Colors.white ,height:MediaQuery.of(context).size.height *.02,),
+                        Image(
+                          image: AssetImage('assets/images/notice_board.png'),
+                          color: Colors.white,
+                          height: MediaQuery.of(context).size.height * .02,
+                        ),
+                        SizedBox(
+                            width: MediaQuery.of(context).size.width * .02),
                         Text(
                           "Notices",
                           style: TextStyle(color: Colors.white),
@@ -130,7 +136,7 @@ class _NoticesState extends State<Notices> {
         color: Colors.white,
         border: Border.all(color: Colors.black),
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(30),
+          bottomRight: Radius.circular(10),
         ),
       ),
       padding: EdgeInsets.symmetric(
@@ -142,8 +148,13 @@ class _NoticesState extends State<Notices> {
           Row(
             children: [
               SizedBox(height: 20),
-             Image(image: AssetImage('assets\images\notice_board.png')),
-             SizedBox(width: MediaQuery.of(context).size.width * .02,),
+              Image.asset(
+                'assets/images/notice_board.png',
+                height: MediaQuery.of(context).size.height * .03,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .02,
+              ),
               Text(
                 "Notices",
                 style: TextStyle(color: Color(0xff14514D), fontSize: 20),
@@ -153,25 +164,41 @@ class _NoticesState extends State<Notices> {
           Divider(
             color: Colors.black,
           ),
-          notetile(
-              "Learning Portal Demonstration Video",
-              "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
-              "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
-          notetile(
-              "Learning Portal Demonstration Video",
-              "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
-              "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
-          notetile(
-              "Learning Portal Demonstration Video",
-              "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
-              "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * .6,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  notetile(
+                      "Learning Portal Demonstration Video",
+                      "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
+                      "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
+                  SizedBox(height: MediaQuery.of(context).size.height * .002),
+                  notetile(
+                      "Learning Portal Demonstration Video",
+                      "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
+                      "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
+                  SizedBox(height: MediaQuery.of(context).size.height * .002),
+                  notetile(
+                      "Learning Portal Demonstration Video",
+                      "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
+                      "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
+                  SizedBox(height: MediaQuery.of(context).size.height * .002),
+                ],
+              ),
+            ),
+          )
         ]),
       ),
     );
   }
 
+
+
   Widget notetile(String title, String desc, String link) {
     return ExpansionTile(
+        
+        collapsedBackgroundColor: Colors.grey[200],
         collapsedIconColor: Color(0xff6EB7C6),
         iconColor: Color(0xff6EB7C6),
         title: Text(
@@ -180,10 +207,13 @@ class _NoticesState extends State<Notices> {
         ),
         children: [
           Container(
+            decoration: BoxDecoration(
+                color: Color(0xffB9DCE4),
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10))),
             width: double.infinity,
-            
             padding: EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 5),
-            color: Color(0xffB9DCE4),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -201,10 +231,12 @@ class _NoticesState extends State<Notices> {
                 Row(
                   children: [
                     Text("Link : ", style: TextStyle(color: Color(0xff707070))),
-                    Expanded(child:  Text(
+                    Expanded(
+                      child: Text(
                         link,
                         style: TextStyle(color: Color(0xff0A7DEF)),
-                      ),)
+                      ),
+                    )
                   ],
                 )
               ],

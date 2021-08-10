@@ -63,7 +63,8 @@ class _StudentProfileState extends State<StudentProfile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 20.0),
                         child: ExpansionTileCard(
-                          baseColor: Colors.white70,
+                          
+                          baseColor: Colors.grey[4000],
                           key: cardA,
                           leading: ConstrainedBox(
                             constraints: BoxConstraints(
@@ -136,7 +137,7 @@ class _StudentProfileState extends State<StudentProfile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 20.0),
                         child: ExpansionTileCard(
-                          baseColor: Colors.white70,
+                          baseColor: Colors.grey[4000],
                           //  expandedColor: Color(0xffCFF6F4),
                           key: cardB,
                           leading: ConstrainedBox(
@@ -220,7 +221,7 @@ class _StudentProfileState extends State<StudentProfile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 20.0),
                         child: ExpansionTileCard(
-                          baseColor: Colors.white70,
+                        baseColor: Colors.grey[4000],
                           //  expandedColor: Color(0xffCFF6F4),
                           key: cardC,
                           leading: ConstrainedBox(
@@ -307,7 +308,7 @@ class _StudentProfileState extends State<StudentProfile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 20.0),
                         child: ExpansionTileCard(
-                          baseColor: Colors.white70,
+                         baseColor: Colors.grey[4000],
                           //  expandedColor: Color(0xffCFF6F4),
                           key: cardD,
                           leading: ConstrainedBox(
