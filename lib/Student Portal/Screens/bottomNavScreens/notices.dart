@@ -122,12 +122,16 @@ class _NoticesState extends State<Notices> {
 
   Widget content() {
     return Container(
-      padding: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(10),
-          )),
+        color: Colors.white,
+        border: Border.all(color: Colors.black),
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(30),
+        ),
+      ),
+      padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.02,
+      ),
       child: Container(
         margin: EdgeInsets.only(top: 20),
         child: Column(children: [
@@ -148,137 +152,63 @@ class _NoticesState extends State<Notices> {
           Divider(
             color: Colors.black,
           ),
-          Row(
-            children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "Learning Portal Demonstration Video",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xff14514D),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_up_rounded,
-                        color: Color(0xff14514D),
-                      )
-                    ],
-                  ),
-                  Container(
-                    width: 315,
-                    height: 100,
-                    decoration: BoxDecoration(color: Color(0xff6EB7C6)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 17, top: 5),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Welcome to EHS Learning Platform. Chek out"),
-                          Text("the video below to learn how to navigate the"),
-                          Text("platform"),
-                          Text("Link: https://www.youtube.com/watch?"),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "Learning Portal Demonstration Video",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xff14514D),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_up_rounded,
-                        color: Color(0xff14514D),
-                      )
-                    ],
-                  ),
-                  Container(
-                    width: 315,
-                    height: 100,
-                    decoration: BoxDecoration(color: Color(0xff6EB7C6)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 17, top: 5),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Welcome to EHS Learning Platform. Chek out"),
-                          Text("the video below to learn how to navigate the"),
-                          Text("platform"),
-                          Text("Link: https://www.youtube.com/watch?"),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "Learning Portal Demonstration Video",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xff14514D),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_up_rounded,
-                        color: Color(0xff14514D),
-                      )
-                    ],
-                  ),
-                  Container(
-                    width: 315,
-                    height: 100,
-                    decoration: BoxDecoration(color: Color(0xff6EB7C6)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 17, top: 5),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Welcome to EHS Learning Platform. Chek out"),
-                          Text("the video below to learn how to navigate the"),
-                          Text("platform"),
-                          Text("Link: https://www.youtube.com/watch?"),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
+          notetile(
+              "Learning Portal Demonstration Video",
+              "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
+              "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
+          notetile(
+              "Learning Portal Demonstration Video",
+              "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
+              "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
+          notetile(
+              "Learning Portal Demonstration Video",
+              "Welcome to EHS Learning Platform. Check out the video below to learn how to navigate the platform.",
+              "https://www.youtube.com/watch?v=5TnHTrXsBOU"),
         ]),
       ),
     );
+  }
+
+  Widget notetile(String title, String desc, String link) {
+    return ExpansionTile(
+        collapsedIconColor: Color(0xff6EB7C6),
+        iconColor: Color(0xff6EB7C6),
+        title: Text(
+          title,
+          style: TextStyle(color: Color(0xff14514D)),
+        ),
+        children: [
+          Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * .1,
+            padding: EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 5),
+            color: Color(0xffB9DCE4),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Wrap(
+                  children: [
+                    Text(
+                      desc,
+                      style: TextStyle(color: Color(0xff707070)),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .01,
+                ),
+                Row(
+                  children: [
+                    Text("Link : ", style: TextStyle(color: Color(0xff707070))),
+                    Text(
+                      link,
+                      style: TextStyle(color: Color(0xff0A7DEF)),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
+        ]);
   }
 }
