@@ -152,27 +152,7 @@ class _FlipClassState extends State<FlipClass> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            // VideoPlayer(_controller),
-            // FutureBuilder(
-            //   future: _initializeVideoPlayerFuture,
-            //   builder: (context, snapshot) {
-            //     if (snapshot.connectionState == ConnectionState.done) {
-            //       return Center(
-            //         child: AspectRatio(
-            //           aspectRatio: _controller.value.aspectRatio,
-            //           child: VideoPlayer(_controller),
-            //         ),
-            //       );
-            //     } else {
-            //       return Center(
-            //         child: CircularProgressIndicator(),
-            //       );
-            //     }
-            //   },
-            // ),
-
             unitCard("Unit 1"),
-
             unitCard("Unit 2"),
             unitCard("Unit 3")
           ],
@@ -210,16 +190,20 @@ class _FlipClassState extends State<FlipClass> {
         child: Column(
           children: [
             Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10))),
-                height: MediaQuery.of(context).size.height * .2,
-                child: ChewiePlayer(
-                    videoUrl:
-                        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'
-                    // 'assets/video/butterfly.mp4'
-                    )),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10))),
+              height: MediaQuery.of(context).size.height * .2,
+              child: MyVideoPlayer(
+                
+              ),
+              // ChewiePlayer(
+              //     videoUrl:
+              //         'https://static.videezy.com/system/resources/previews/000/053/030/original/TrailerSchool37.mp4'
+              //     // 'assets/video/butterfly.mp4'
+              //     )
+            ),
             InnerShadow(
               blur: 5,
               color: const Color(0xff5F9FAC),
@@ -248,98 +232,96 @@ class _FlipClassState extends State<FlipClass> {
                 Container(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.06),
-                  child: Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 15),
-                          child: Text("Lesson 1"),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: Text("Lesson 1"),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        "Introduction to mangerial Accounting",
+                        style: TextStyle(fontSize: 15),
+                      ),
+                      SizedBox(height: 4),
+                      Text("Description: "),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .7,
+                        child: Text(
+                          "Accounting definition, Identify the activities adn users associated with Accounting.",
+                          maxLines: 2,
+                          overflow: TextOverflow.fade,
+                          style:
+                              TextStyle(fontSize: 15, color: Color(0xff6EB7C6)),
                         ),
-                        SizedBox(height: 4),
-                        Text(
-                          "Introduction to mangerial Accounting",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        SizedBox(height: 4),
-                        Text("Description: "),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * .7,
-                          child: Text(
-                            "Accounting definition, Identify the activities adn users associated with Accounting.",
-                            maxLines: 2,
-                            overflow: TextOverflow.fade,
-                            style: TextStyle(
-                                fontSize: 15, color: Color(0xff6EB7C6)),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        "● Three activities ● Accounting data users ● Basic concepts",
+                        style: TextStyle(fontSize: 10),
+                      ),
+                      SizedBox(height: 4),
+                      // Text(
+                      //   '● Fundamentals of Accounting ● Assets ● Liabilities ● owner’s equity ',
+                      //   style: TextStyle(fontSize: 10),
+                      // ),
+                      SizedBox(height: 4),
+                      Text(
+                        '● objectives of Accounting',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Image.asset(
+                            'assets/contentImages/pfile.png',
                           ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          "● Three activities ● Accounting data users ● Basic concepts",
-                          style: TextStyle(fontSize: 10),
-                        ),
-                        SizedBox(height: 4),
-                        // Text(
-                        //   '● Fundamentals of Accounting ● Assets ● Liabilities ● owner’s equity ',
-                        //   style: TextStyle(fontSize: 10),
-                        // ),
-                        SizedBox(height: 4),
-                        Text(
-                          '● objectives of Accounting',
-                          style: TextStyle(fontSize: 10),
-                        ),
-                        SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/contentImages/pfile.png',
-                            ),
-                            SizedBox(width: 10),
-                            Text(
-                              "Introduction to managerial Accounting",
-                              style: TextStyle(fontSize: 15),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/contentImages/wfile.png',
-                            ),
-                            SizedBox(width: 10),
-                            Text(
-                              "Lesson plan",
-                              style: TextStyle(fontSize: 15),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/contentImages/dfile.png',
-                            ),
-                            SizedBox(width: 10),
-                            Text(
-                              "AFL",
-                              style: TextStyle(fontSize: 15),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/contentImages/lfile.png',
-                            ),
-                            SizedBox(width: 10),
-                            Text(
-                              "Introduction to managerial Accounting",
-                              style: TextStyle(fontSize: 15),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
+                          SizedBox(width: 10),
+                          Text(
+                            "Introduction to managerial Accounting",
+                            style: TextStyle(fontSize: 15),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            'assets/contentImages/wfile.png',
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            "Lesson plan",
+                            style: TextStyle(fontSize: 15),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            'assets/contentImages/dfile.png',
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            "AFL",
+                            style: TextStyle(fontSize: 15),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            'assets/contentImages/lfile.png',
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            "Introduction to managerial Accounting",
+                            style: TextStyle(fontSize: 15),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -365,7 +347,7 @@ class _FlipClassState extends State<FlipClass> {
               Row(
                 children: [
                   SizedBox(
-                    width: 20,
+                    width: 10,
                   ),
                   Image.asset(
                     'assets/images/lms.png',
@@ -373,7 +355,7 @@ class _FlipClassState extends State<FlipClass> {
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 2,
                   ),
                   Text(
                     "Learning Management System",
@@ -392,7 +374,7 @@ class _FlipClassState extends State<FlipClass> {
               Row(
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * .02,
+                    width: MediaQuery.of(context).size.width * .01,
                   ),
                   Image.asset(
                     'assets/contentImages/flip.png',
@@ -400,7 +382,7 @@ class _FlipClassState extends State<FlipClass> {
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 2,
                   ),
                   Text("Flip Class",
                       style: TextStyle(

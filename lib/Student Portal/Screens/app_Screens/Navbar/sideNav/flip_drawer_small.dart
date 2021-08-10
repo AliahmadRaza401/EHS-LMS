@@ -11,6 +11,7 @@ class FlipDrawerSmall extends StatefulWidget {
 class _FlipDrawerSmallState extends State<FlipDrawerSmall> {
   @override
   Widget build(BuildContext context) {
+    late String selected;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -21,35 +22,144 @@ class _FlipDrawerSmallState extends State<FlipDrawerSmall> {
       child: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) =>
-                        BottomNav(currentPage: 'flipDrawer')));
-              },
-              child: menu(Colors.white, 'assets/contentImages/menu.png')),
+          // GestureDetector(
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (context) => BottomNav(currentPage: "flipDrawer")));
+          //   },
+          //   child: Image.asset(
+          //     'assets/contentImages/menu.png',
+          //     color: Colors.white,
+          //     height: 30,
+          //     width: 30,
+          //   ),
+          // ),
+          // divider(),
+          // GestureDetector(
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (context) => BottomNav(currentPage: "flipClass")));
+          //     setState(() {
+          //       selected = "flipClass";
+          //     });
+          //   },
+          //   child: Image.asset(
+          //     'assets/contentImages/lms_files_icon.png',
+          //     color: selected == "flipClass" ? Color(0xff558D98) : Colors.white,
+          //     height: 30,
+          //     width: 30,
+          //   ),
+          // ),
+          // divider(),
+          // GestureDetector(
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (context) => BottomNav(currentPage: "discussion")));
+          //     setState(() {
+          //       selected = "discussion";
+          //     });
+          //   },
+          //   child: Image.asset(
+          //     'assets/contentImages/lms_message_icon.png',
+          //     color:
+          //         selected == "discussion" ? Color(0xff558D98) : Colors.white,
+          //     height: 30,
+          //     width: 30,
+          //   ),
+          // ),
+          // divider(),
+          // GestureDetector(
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (context) => BottomNav(currentPage: "assesment")));
+          //     setState(() {
+          //       selected = "assesment";
+          //     });
+          //   },
+          //   child: Image.asset(
+          //     'assets/contentImages/lms_status_icon.png',
+          //     color: selected == "assesment" ? Color(0xff558D98) : Colors.white,
+          //     height: 30,
+          //     width: 30,
+          //   ),
+          // ),
+          // divider(),
+          // GestureDetector(
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (context) => BottomNav(currentPage: "quizzes")));
+          //     setState(() {
+          //       selected = "quizzes";
+          //     });
+          //   },
+          //   child: Image.asset(
+          //     'assets/contentImages/lms_faq_icon.png',
+          //     color: selected == "quizzes" ? Color(0xff558D98) : Colors.white,
+          //     height: 30,
+          //     width: 30,
+          //   ),
+          // ),
+          // divider(),
+          // GestureDetector(
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (context) => BottomNav(currentPage: "resourses")));
+          //     setState(() {
+          //       selected = "resourses";
+          //     });
+          //   },
+          //   child: Image.asset(
+          //     'assets/contentImages/lms_download_icon.png',
+          //     color: selected == "resourses" ? Color(0xff558D98) : Colors.white,
+          //     height: 30,
+          //     width: 30,
+          //   ),
+          // ),
+          // divider(),
+          // GestureDetector(
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (context) => BottomNav(currentPage: "liveLecture")));
+          //     setState(() {
+          //       selected = "liveLecture";
+          //     });
+          //   },
+          //   child: Image.asset(
+          //     'assets/contentImages/lms_video_icon.png',
+          //     color:
+          //         selected == "liveLecture" ? Color(0xff558D98) : Colors.white,
+          //     height: 30,
+          //     width: 30,
+          //   ),
+          // ),
+
+          menu("flipDrawer", 'assets/contentImages/menu.png'),
           divider(),
-          menu(Color(0xff23FFFF), 'assets/contentImages/lms_files_icon.png'),
+          menu("flipClass", 'assets/contentImages/lms_files_icon.png'),
           divider(),
-          menu(Colors.white, 'assets/contentImages/lms_message_icon.png'),
+          menu("discussion", 'assets/contentImages/lms_message_icon.png'),
           divider(),
-          menu(Colors.white, 'assets/contentImages/lms_status_icon.png'),
+          menu("assesment", 'assets/contentImages/lms_status_icon.png'),
           divider(),
-          menu(Colors.white, 'assets/contentImages/lms_faq_icon.png'),
+          menu("quizzes", 'assets/contentImages/lms_faq_icon.png'),
           divider(),
-          menu(Colors.white, 'assets/contentImages/lms_download_icon.png'),
+          menu("resourses", 'assets/contentImages/lms_download_icon.png'),
           divider(),
-          menu(Colors.white, 'assets/contentImages/lms_video_icon.png'),
+          menu("liveLecture", 'assets/contentImages/lms_video_icon.png'),
         ],
       ),
     );
   }
 
-  Widget menu(color, src) {
+  Widget menu(goTo, src) {
     return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => BottomNav(currentPage: goTo)));
+      },
       child: Image.asset(
         src,
-        color: color,
+        color: Colors.white,
         height: 30,
         width: 30,
       ),

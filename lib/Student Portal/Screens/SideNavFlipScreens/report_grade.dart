@@ -159,11 +159,11 @@ class _ReportGradeState extends State<ReportGrade> {
                     Divider(),
                     _buttonWidget(),
                     Divider(),
-                    _textWidget("Assessment of LearningWeight", "0%"),
+                    _textWidget("Assessment of Learning", "0%"),
                     Divider(),
                     _buttonWidget(),
                     Divider(),
-                    _textWidget("Assessment As LearningWeight", "0%"),
+                    _textWidget("Assessment As Learning", "0%"),
                     Divider(),
                     _buttonWidget(),
                     Divider(),
@@ -200,7 +200,7 @@ class _ReportGradeState extends State<ReportGrade> {
               Row(
                 children: [
                   SizedBox(
-                    width: 20,
+                    width: 10,
                   ),
                   Image.asset(
                     'assets/images/lms.png',
@@ -208,7 +208,7 @@ class _ReportGradeState extends State<ReportGrade> {
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 2,
                   ),
                   Text(
                     "Learning Management System",
@@ -227,7 +227,7 @@ class _ReportGradeState extends State<ReportGrade> {
               Row(
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * .02,
+                    width: MediaQuery.of(context).size.width * .01,
                   ),
                   // Image.asset(
                   //   'assets/contentImages/qmark.png',
@@ -240,7 +240,7 @@ class _ReportGradeState extends State<ReportGrade> {
                     size: 20,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 2,
                   ),
                   Text("ReportGrade",
                       style: TextStyle(

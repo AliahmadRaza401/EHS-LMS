@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/bottomNav/bottomNav.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/home.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/calender.dart';
@@ -72,18 +73,25 @@ class _EventSchedualState extends State<EventSchedual> {
                   },
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.home,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          Text(
-                            "Home",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  BottomNav(currentPage: "home")));
+                        },
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.home,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                            Text(
+                              "Home",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -139,8 +147,7 @@ class _EventSchedualState extends State<EventSchedual> {
           color: Colors.white,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(10),
-          )
-          ),
+          )),
       child: SingleChildScrollView(
         child: Column(
           children: [

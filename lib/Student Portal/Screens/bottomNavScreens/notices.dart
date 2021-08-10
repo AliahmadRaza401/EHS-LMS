@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/bottomNav/bottomNav.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/sideNav_small.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/header.dart';
 import 'package:flutter/cupertino.dart';
@@ -61,18 +62,25 @@ class _NoticesState extends State<Notices> {
               children: [
                 Column(
                   children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.home,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        Text(
-                          "Home",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
+                    GestureDetector(
+                       onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  BottomNav(currentPage: "home")));
+                        },
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.home,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                          Text(
+                            "Home",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

@@ -63,18 +63,25 @@ class _LMSState extends State<LMS> {
               children: [
                 Column(
                   children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.home,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        Text(
-                          "Home",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
+                    GestureDetector(
+                       onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  BottomNav(currentPage: "home")));
+                        },
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.home,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                          Text(
+                            "Home",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

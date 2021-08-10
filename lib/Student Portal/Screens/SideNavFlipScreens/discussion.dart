@@ -11,34 +11,10 @@ class Discussion extends StatefulWidget {
 }
 
 class _DiscussionState extends State<Discussion> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: RadialGradient(
-            center: Alignment(-0.76, -0.8),
-            radius: 0.4,
-            colors: [
-              Color(0xffffffff),
-              Color(0xff6EB7C6),
-            ],
-            stops: <double>[0.0, 1.0],
-          ),
-        ),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                header(context),
-              ],
-            ),
-            body(),
-          ],
-        ),
-      ),
-    );
-  }
+  List<String> text = ["InduceSmile.com", "Flutter.io", "google.com"];
+
+  bool _checkbox = false;
+  bool _checkboxListTile = false;
 
   Widget body() {
     return Container(
@@ -126,7 +102,147 @@ class _DiscussionState extends State<Discussion> {
           borderRadius: BorderRadius.only(bottomRight: Radius.circular(10))),
       child: SingleChildScrollView(
         child: Column(
-          children: [Text("Discussion")],
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width * 0.87,
+              height: MediaQuery.of(context).size.height * 0.68,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(color: Colors.black),
+              ),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.22,
+                    padding: EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      minLines: 10,
+                      maxLines: 20,
+                      keyboardType: TextInputType.multiline,
+                      decoration: InputDecoration(
+                        hintText: 'See What you have been up',
+                        hintStyle: TextStyle(color: Colors.grey),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.35,
+                    width: double.infinity,
+                    padding: EdgeInsets.fromLTRB(50, 10, 10, 0),
+                    color: Color(0xffE6F2F5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.20,
+                        ),
+                        Text(
+                          "Share With:",
+                          style: TextStyle(fontSize: 18.0),
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: _checkbox,
+                              onChanged: (value) {
+                                setState(() {
+                                  _checkbox = !_checkbox;
+                                });
+                              },
+                            ),
+                            Text('Teachers'),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: _checkbox,
+                              onChanged: (value) {
+                                setState(() {
+                                  _checkbox = !_checkbox;
+                                });
+                              },
+                            ),
+                            Text('Students'),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: _checkbox,
+                              onChanged: (value) {
+                                setState(() {
+                                  _checkbox = !_checkbox;
+                                });
+                              },
+                            ),
+                            Text('Selected Students'),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: _checkbox,
+                              onChanged: (value) {
+                                setState(() {
+                                  _checkbox = !_checkbox;
+                                });
+                              },
+                            ),
+                            Text('Notify by email'),
+                          ],
+                        ),
+                        // Row(
+                        //   children: [
+                        //     Checkbox(
+                        //       value: _checkbox,
+                        //       onChanged: (value) {
+                        //         setState(() {
+                        //           _checkbox = !_checkbox;
+                        //         });
+                        //       },
+                        //     ),
+                        //     Text('I am true now'),
+                        //   ],
+                        // ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            ConstrainedBox(
+                              constraints: BoxConstraints.tightFor(
+                                  width: 100, height: 30),
+                              child: ElevatedButton.icon(
+                                icon: Image.asset(
+                                  "assets/contentImages/Icon ionic-ios-send@2x.png",
+                                  height: 20,
+                                  width: 20,
+                                ),
+                                label: Text("Share",
+                                    style: TextStyle(
+                                        fontSize: 10.5,
+                                        fontWeight: FontWeight.bold)),
+                                onPressed: () {
+                                  print("Pressed");
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color(
+                                      0xff6EB7C6), // set the background color
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -147,7 +263,7 @@ class _DiscussionState extends State<Discussion> {
               Row(
                 children: [
                   SizedBox(
-                    width: 20,
+                    width: 10,
                   ),
                   Image.asset(
                     'assets/images/lms.png',
@@ -155,7 +271,7 @@ class _DiscussionState extends State<Discussion> {
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 2,
                   ),
                   Text(
                     "Learning Management System",
@@ -174,7 +290,7 @@ class _DiscussionState extends State<Discussion> {
               Row(
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * .02,
+                    width: MediaQuery.of(context).size.width * .01,
                   ),
                   Image.asset(
                     'assets/contentImages/discussion.png',
@@ -182,7 +298,7 @@ class _DiscussionState extends State<Discussion> {
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 2,
                   ),
                   Text("Discussion",
                       style: TextStyle(
@@ -194,6 +310,35 @@ class _DiscussionState extends State<Discussion> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment(-0.76, -0.8),
+            radius: 0.4,
+            colors: [
+              Color(0xffffffff),
+              Color(0xff6EB7C6),
+            ],
+            stops: <double>[0.0, 1.0],
+          ),
+        ),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                header(context),
+              ],
+            ),
+            body(),
+          ],
+        ),
       ),
     );
   }
