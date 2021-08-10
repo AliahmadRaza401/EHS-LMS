@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ehs_lms/Student%20Portal/Authentication/Authentication.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/bottomNav/bottomNav.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/login_bg.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,21 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
+  var email;
+  var password;
+  bool loading = false;
+
+  login() {
+    // var data = Authentication().login();
+
+    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              BottomNav(currentPage: "home")),
+                                    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,11 +157,7 @@ class _LoginState extends State<Login> {
                                 height: 50.0,
                                 child: OutlinedButton(
                                   onPressed: () {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              BottomNav(currentPage: "home")),
-                                    );
+                                    login();
                                   },
                                   child: AutoSizeText(
                                     "Sign In",

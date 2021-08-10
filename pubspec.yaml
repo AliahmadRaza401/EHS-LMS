@@ -37,6 +37,8 @@ dependencies:
   expansion_tile_card: ^2.0.0
   video_player: ^2.1.4
   chewie: ^1.2.2
+  http: ^0.13.3
+  form_field_validator: ^1.1.0
 
 
 dev_dependencies:
