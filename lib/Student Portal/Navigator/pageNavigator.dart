@@ -12,6 +12,11 @@ import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/notices.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/profile.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/bottomNavScreens/social_learning.dart';
 import 'package:ehs_lms/Student%20Portal/Screens/app_Screens/Navbar/sideNav/flip_drawer_main.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/home_Screens/activities.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/home_Screens/attendance.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/home_Screens/health.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/home_Screens/modules.dart';
+import 'package:ehs_lms/Student%20Portal/Screens/home_Screens/report_card.dart';
 import 'package:ehs_lms/Student%20Portal/widgets/calender.dart';
 import 'package:flutter/material.dart';
 
@@ -52,6 +57,16 @@ class PageNavigator extends StatelessWidget {
       child = LiveLacture();
     } else if (page == "reportGrade") {
       child = ReportGrade();
+    } else if (page == "activities") {
+      child = Activities();
+    } else if (page == "attendance") {
+      child = Attendance();
+    } else if (page == "health") {
+      child = Health();
+    } else if (page == "modules") {
+      child = Modules();
+    } else if (page == "report_card") {
+      child = ReportCard();
     } else {
       child = HomeScreen();
     }

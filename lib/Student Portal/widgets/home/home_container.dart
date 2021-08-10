@@ -7,13 +7,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 Widget homeScreenContainer(
-    BuildContext context, String image, heading, subHeading, int color) {
+    BuildContext context,String goTo ,String image, heading, subHeading, int color) {
   return GestureDetector(
     onTap: () {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => BottomNav(
-            currentPage: 'lms',
+            currentPage: goTo,
           ),
         ),
       );

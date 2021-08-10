@@ -19,6 +19,7 @@ Widget widgetArea(BuildContext context) {
           children: [
             homeScreenContainer(
               context,
+              'lms',
               "assets/images/lms.png",
               "LMS",
               "View Report Cards",
@@ -26,6 +27,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'social_learning',
               "assets/images/social_learning.png",
               "Social Learning",
               "Social Discussions",
@@ -33,6 +35,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'report_card',
               "assets/images/report_card.png",
               "Report Cards",
               "View Report Cards",
@@ -40,6 +43,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'attendance',
               "assets/images/attendance.png",
               "Attendance",
               "View Attendance",
@@ -47,6 +51,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'health',
               "assets/images/health_records.png",
               "Health Records",
               "View History",
@@ -54,6 +59,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'modules',
               "assets/images/module.png",
               "Modules",
               "Core Modules",
@@ -61,6 +67,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'eventSchedule',
               "assets/images/calendar.png",
               "Calendar",
               "View Events\nView Class Schedules",
@@ -68,6 +75,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'notice_board',
               "assets/images/notice_board.png",
               "Notice Board",
               "View Notices",
@@ -75,6 +83,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'activities',
               "assets/images/activities.png",
               "Activities",
               "Activities",
@@ -82,6 +91,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'lms',
               "assets/images/learning_module.png",
               "Learning Module",
               "Learning Management System",
@@ -89,6 +99,7 @@ Widget widgetArea(BuildContext context) {
             ),
             homeScreenContainer(
               context,
+              'lms',
               "assets/images/add.png",
               "Add",
               "",
