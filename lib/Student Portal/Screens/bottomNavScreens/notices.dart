@@ -91,11 +91,7 @@ class _NoticesState extends State<Notices> {
                   children: [
                     Row(
                       children: [
-                        Icon(
-                          Icons.notes,
-                          color: Colors.white,
-                          size: 20,
-                        ),
+                        Image(image: AssetImage('assets\images\notice_board.png'),color: Colors.white ,height:MediaQuery.of(context).size.height *.02,),
                         Text(
                           "Notices",
                           style: TextStyle(color: Colors.white),
@@ -146,11 +142,8 @@ class _NoticesState extends State<Notices> {
           Row(
             children: [
               SizedBox(height: 20),
-              Icon(
-                Icons.person_add,
-                color: Color(0xff14514D),
-                size: 35,
-              ),
+             Image(image: AssetImage('assets\images\notice_board.png')),
+             SizedBox(width: MediaQuery.of(context).size.width * .02,),
               Text(
                 "Notices",
                 style: TextStyle(color: Color(0xff14514D), fontSize: 20),
@@ -188,7 +181,7 @@ class _NoticesState extends State<Notices> {
         children: [
           Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * .1,
+            
             padding: EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 5),
             color: Color(0xffB9DCE4),
             child: Column(
@@ -208,10 +201,10 @@ class _NoticesState extends State<Notices> {
                 Row(
                   children: [
                     Text("Link : ", style: TextStyle(color: Color(0xff707070))),
-                    Text(
-                      link,
-                      style: TextStyle(color: Color(0xff0A7DEF)),
-                    ),
+                    Expanded(child:  Text(
+                        link,
+                        style: TextStyle(color: Color(0xff0A7DEF)),
+                      ),)
                   ],
                 )
               ],
