@@ -41,7 +41,7 @@ class _ModulesState extends State<Modules> {
                               topLeft: Radius.circular(15),
                               topRight: Radius.circular(15))),
                       padding: EdgeInsets.all(10),
-                      width: double.infinity,
+                      width: MediaQuery.of(context).size.width *.98,
                       height: MediaQuery.of(context).size.height * 0.065,
                       child: Row(
                         children: [
@@ -68,6 +68,8 @@ class _ModulesState extends State<Modules> {
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height *.71,
+              width: MediaQuery.of(context).size.width *.98,
+
               
               child: SingleChildScrollView(
                 child: Column(
@@ -86,7 +88,7 @@ class _ModulesState extends State<Modules> {
                                 "Academic & Learnin",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                      fontSize: MediaQuery.of(context).size.height *.025,
                                     fontWeight: FontWeight.bold,
                                     
                                     ),
@@ -97,7 +99,7 @@ class _ModulesState extends State<Modules> {
                               child: Text("Core Modules",
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 20,
+                                      fontSize: MediaQuery.of(context).size.height *.025,
                                       fontWeight: FontWeight.bold)),
                             )
                           ],
