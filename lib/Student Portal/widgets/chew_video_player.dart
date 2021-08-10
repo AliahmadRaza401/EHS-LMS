@@ -39,7 +39,6 @@ class _MyVideoPlayerState extends State<MyVideoPlayer> {
     _videoPlayerController =
         VideoPlayerController.asset('assets/video/school.mp4');
     // 'https://static.videezy.com/system/resources/previews/000/053/030/original/TrailerSchool37.mp4');
-    // _videoPlayerController = VideoPlayerController.network(path);
     _future = initVideoPlayer();
   }
 
