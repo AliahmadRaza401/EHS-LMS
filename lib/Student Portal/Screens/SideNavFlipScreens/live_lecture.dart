@@ -126,7 +126,58 @@ class _LiveLactureState extends State<LiveLacture> {
           borderRadius: BorderRadius.only(bottomRight: Radius.circular(10))),
       child: SingleChildScrollView(
         child: Column(
-          children: [Text("LiveLacture")],
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width * 0.87,
+              height: MediaQuery.of(context).size.height * 0.68,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  _mylistTile(
+                      "assets/contentImages/Icon ionic-logo-whatsapp@2x.png",
+                      "Whatsapp Video"),
+                  _mylistTile("assets/contentImages/Icon awesome-skype@2x.png",
+                      "Skype Video"),
+                  _mylistTile(
+                      "assets/contentImages/Icon ionic-ios-videocam@2x.png",
+                      "Zoom"),
+                  _mylistTile(
+                      "assets/contentImages/Icon awesome-facebook-messenger@2x.png",
+                      "Messenger"),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.030,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      "Supported Platforms(s)",
+                      style: TextStyle(
+                          color: Color(0xff6EB7C6),
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.020,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                          child: _mylistTile2(
+                              "assets/contentImages/Icon awesome-bell@2x.png",
+                              "Upcoming Lectures",
+                              "No Upcoming Lectures")),
+                      Expanded(
+                          child: _mylistTile2(
+                              "assets/contentImages/Icon feather-bell@2x.png",
+                              "Previous Lectures",
+                              "No Previous Lectures")),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -147,7 +198,7 @@ class _LiveLactureState extends State<LiveLacture> {
               Row(
                 children: [
                   SizedBox(
-                    width: 20,
+                    width: 10,
                   ),
                   Image.asset(
                     'assets/images/lms.png',
@@ -155,7 +206,7 @@ class _LiveLactureState extends State<LiveLacture> {
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 2,
                   ),
                   Text(
                     "Learning Management System",
@@ -174,7 +225,7 @@ class _LiveLactureState extends State<LiveLacture> {
               Row(
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * .02,
+                    width: MediaQuery.of(context).size.width * .01,
                   ),
                   Image.asset(
                     'assets/contentImages/live.png',
@@ -182,7 +233,7 @@ class _LiveLactureState extends State<LiveLacture> {
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 2,
                   ),
                   Text("Live Lacture",
                       style: TextStyle(
@@ -194,6 +245,78 @@ class _LiveLactureState extends State<LiveLacture> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  _mylistTile(String imgPath, String titleText) {
+    return Container(
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          child: Image.asset(
+            imgPath,
+            height: MediaQuery.of(context).size.height * 0.6,
+            width: MediaQuery.of(context).size.width * 0.6,
+          ),
+        ),
+        title: Text(
+          titleText,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 17.0,
+          ),
+        ),
+        subtitle: Text(
+          "Social Discussions",
+          style: TextStyle(
+            fontSize: 14.0,
+          ),
+        ),
+        minLeadingWidth: 40,
+        onTap: () {
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => ToPage),
+          // );
+        },
+      ),
+    );
+  }
+
+  _mylistTile2(String imgPath, String titleText, String subtitleText) {
+    return Container(
+      child: ListTile(
+        leading: Padding(
+          padding: EdgeInsets.only(bottom: 40),
+          child: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            child: Image.asset(
+              imgPath,
+              height: MediaQuery.of(context).size.height * 0.8,
+              width: MediaQuery.of(context).size.width * 0.8,
+            ),
+          ),
+        ),
+        title: Text(
+          titleText,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 15.0,
+          ),
+        ),
+        subtitle: Text(
+          subtitleText,
+          style: TextStyle(
+            fontSize: 14.0,
+          ),
+        ),
+        onTap: () {
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => ToPage),
+          // );
+        },
       ),
     );
   }

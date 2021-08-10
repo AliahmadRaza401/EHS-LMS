@@ -59,7 +59,7 @@ flutter:
     - assets/images/
     - assets/navIcons/
     - assets/contentImages/
-    # - assets/video/butterfly.mp4
+    - assets/video/
   #    - assets/svg/
   #   - images/a_dot_ham.jpeg
 
